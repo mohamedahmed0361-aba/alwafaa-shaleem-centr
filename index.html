@@ -3,1422 +3,493 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>مركز الوفاء لتأهيل الأشخاص ذوي الإعاقة</title>
-
 <meta name="description" content="الموقع الإلكتروني لمركز الوفاء لتأهيل الأشخاص ذوي الإعاقة بولاية شليم وجزر الحلانيات، محافظة ظفار، سلطنة عمان.">
 <meta name="theme-color" content="#071b36">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 :root {
-    --navy: #071b36;
-    --navy-light: #102b4d;
-    --blue: #0756a5;
-    --blue-light: #087fd1;
-    --cyan: #11c5d8;
-    --gold: #ffc86b;
-    --text: #183451;
-    --muted: #71839a;
-    --white: #ffffff;
-    --light: #f1f7fc;
-    --shadow: 0 15px 45px rgba(7, 38, 75, 0.10);
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 110px;
-}
-
-body {
-    font-family: 'Cairo', Tahoma, Arial, sans-serif;
-    background: var(--light);
-    color: var(--text);
-    overflow-x: hidden;
-    line-height: 1.9;
-}
-
-a {
-    text-decoration: none;
-}
-
-button {
-    font-family: inherit;
-}
-
-::selection {
-    background: var(--cyan);
-    color: var(--navy);
-}
-
-/* =========================
-   HEADER
-========================= */
-
-header {
-    background: rgba(7, 27, 54, 0.97);
-    color: white;
-    padding: 15px 5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 25px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 5px 30px #00152c35;
-    backdrop-filter: blur(18px);
-    border-bottom: 1px solid #ffffff12;
-}
-
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-}
-
-.logos {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-shrink: 0;
-}
-
-.logos img {
-    width: 88px;
-    height: 88px;
-    object-fit: contain;
-    background: white;
-    padding: 6px;
-    border-radius: 19px;
-    box-shadow: 0 5px 20px #00000025;
-    transition: 0.35s;
-}
-
-.logos img:hover {
-    transform: translateY(-4px) scale(1.04);
-    box-shadow: 0 0 25px #11c5d855;
-}
-
-.brand h2 {
-    font-size: 18px;
-    line-height: 1.6;
-    font-weight: 900;
-}
-
-.brand p {
-    color: var(--cyan);
-    font-size: 14px;
-    font-weight: 800;
-}
-
-nav {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-nav a {
-    color: white;
-    padding: 10px 14px;
-    border-radius: 13px;
-    font-size: 14px;
-    font-weight: 800;
-    transition: 0.3s;
-    white-space: nowrap;
-}
-
-nav a:hover {
-    background: linear-gradient(135deg, #0879d8, #11c5d8);
-    box-shadow: 0 0 18px #11c5d899;
-    transform: translateY(-2px);
-}
-
-.menu-toggle {
-    display: none;
-    border: 1px solid #ffffff40;
-    background: #ffffff12;
-    color: white;
-    font-size: 27px;
-    width: 48px;
-    height: 45px;
-    border-radius: 12px;
-    cursor: pointer;
-}
-
-/* =========================
-   HERO
-========================= */
-
-.hero {
-    position: relative;
-    min-height: 660px;
-    padding: 105px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    overflow: hidden;
-    color: white;
-
-    background:
-        radial-gradient(circle at 15% 80%, #0ab4ca55, transparent 35%),
-        radial-gradient(circle at 90% 10%, #1264bb, transparent 40%),
-        linear-gradient(135deg, #061a35, #0756a5, #087f9e);
-}
-
-.hero::before,
-.hero::after {
-    content: "";
-    position: absolute;
-    border: 1px solid #ffffff25;
-    border-radius: 50%;
-    pointer-events: none;
-    animation: rotate 22s linear infinite;
-}
-
-.hero::before {
-    width: 650px;
-    height: 650px;
-    top: -320px;
-    right: -160px;
-}
-
-.hero::after {
-    width: 500px;
-    height: 500px;
-    bottom: -320px;
-    left: -120px;
-    animation-direction: reverse;
-}
-
-.hero-light {
-    position: absolute;
-    width: 350px;
-    height: 350px;
-    background: #11c5d8;
-    filter: blur(150px);
-    opacity: 0.18;
-    border-radius: 50%;
-    top: 25%;
-    left: 15%;
-    animation: lightMove 7s ease-in-out infinite alternate;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 900px;
-    animation: heroAppear 1s ease both;
-}
-
-.badge {
-    display: inline-block;
-    padding: 11px 28px;
-    border: 1px solid #ffffff75;
-    border-radius: 40px;
-    background: #ffffff15;
-    backdrop-filter: blur(10px);
-    margin-bottom: 30px;
-    font-size: 16px;
-    font-weight: 700;
-    box-shadow: 0 0 25px #ffffff10;
-}
-
-.hero h1 {
-    font-size: clamp(38px, 6vw, 68px);
-    font-weight: 900;
-    line-height: 1.5;
-    margin-bottom: 22px;
-}
-
-.hero h1 span {
-    display: block;
-    color: var(--gold);
-    text-shadow: 0 0 25px #ffc86b55;
-}
-
-.hero p {
-    font-size: 19px;
-    color: #e7f6ff;
-    max-width: 780px;
-    margin: auto;
-    line-height: 2.1;
-}
-
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin-top: 35px;
-}
-
-.glow-button,
-.outline-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 15px 34px;
-    border-radius: 45px;
-    font-weight: 900;
-    transition: 0.35s;
-}
-
-.glow-button {
-    color: #09213d;
-    background: linear-gradient(110deg, #ffe4a1, #ffc45b, #fff0c5);
-    box-shadow: 0 0 15px #ffc86b99, 0 0 35px #ffc86b55;
-    animation: buttonGlow 2.5s infinite alternate;
-}
-
-.outline-button {
-    color: white;
-    border: 1px solid #ffffff85;
-    background: #ffffff12;
-    backdrop-filter: blur(8px);
-}
-
-.glow-button:hover,
-.outline-button:hover {
-    transform: translateY(-6px) scale(1.04);
-}
-
-.outline-button:hover {
-    background: #ffffff25;
-    box-shadow: 0 0 25px #ffffff45;
-}
-
-/* =========================
-   GENERAL SECTIONS
-========================= */
-
-section {
-    padding: 90px 6%;
-    max-width: 1300px;
-    margin: auto;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 48px;
-}
-
-.section-title span {
-    color: #079eb8;
-    font-size: 15px;
-    font-weight: 900;
-    letter-spacing: 1px;
-}
-
-.section-title h2 {
-    color: #0756a5;
-    font-size: 36px;
-    font-weight: 900;
-    margin-top: 4px;
-}
-
-.section-title p {
-    color: var(--muted);
-    margin-top: 8px;
-    font-size: 16px;
-}
-
-/* =========================
-   ABOUT
-========================= */
-
-.about-box {
-    background: white;
-    padding: 48px;
-    border-radius: 30px;
-    text-align: center;
-    border: 1px solid #dceaf6;
-    box-shadow: var(--shadow);
-    font-size: 19px;
-    line-height: 2.2;
-    position: relative;
-    overflow: hidden;
-}
-
-.about-box::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 7px;
-    height: 100%;
-    background: linear-gradient(to bottom, var(--cyan), var(--blue), var(--gold));
-}
-
-/* =========================
-   MISSION / VISION / GOALS
-========================= */
-
-.identity-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-    margin-top: 30px;
-}
-
-.identity-card {
-    background: white;
-    border: 1px solid #e0edf7;
-    padding: 32px 25px;
-    border-radius: 25px;
-    text-align: center;
-    box-shadow: 0 12px 35px #164b7610;
-    transition: 0.35s;
-    position: relative;
-    overflow: hidden;
-}
-
-.identity-card::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, var(--cyan), var(--blue), var(--gold));
-}
-
-.identity-card:hover {
-    transform: translateY(-9px);
-    box-shadow: 0 18px 40px #0756a525;
-}
-
-.identity-icon {
-    font-size: 38px;
-    margin-bottom: 12px;
-}
-
-.identity-card h3 {
-    color: var(--blue);
-    font-size: 22px;
-    margin-bottom: 10px;
-}
-
-.identity-card p {
-    color: var(--muted);
-    font-size: 15px;
-}
-
-/* =========================
-   SERVICES
-========================= */
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 25px;
-}
-
-.service-card {
-    position: relative;
-    overflow: hidden;
-    padding: 38px 25px;
-    border-radius: 27px;
-    text-align: center;
-    background: white;
-    border: 1px solid #dceaf6;
-    box-shadow: 0 12px 30px #164b7610;
-    transition: 0.4s;
-}
-
-.service-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    height: 5px;
-    background: linear-gradient(90deg, #11c5d8, #0756a5, #ffc86b);
-}
-
-.service-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 18px 40px #0878bd30;
-}
-
-.service-icon {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto 22px;
-    border-radius: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 47px;
-    background: linear-gradient(135deg, #dff8ff, #e8edff);
-    box-shadow: 0 0 25px #12c5d833;
-    animation: float 3.5s ease-in-out infinite;
-}
-
-.service-card:nth-child(2) .service-icon {
-    background: linear-gradient(135deg, #fff0d7, #ffe0eb);
-}
-
-.service-card:nth-child(3) .service-icon {
-    background: linear-gradient(135deg, #e0ffe9, #d7f6ff);
-}
-
-.service-card:nth-child(4) .service-icon {
-    background: linear-gradient(135deg, #eee4ff, #dceaff);
-}
-
-.service-card h3 {
-    color: #0756a5;
-    font-size: 22px;
-    margin-bottom: 12px;
-}
-
-.service-card p {
-    color: var(--muted);
-    font-size: 16px;
-    line-height: 2;
-}
-
-/* =========================
-   VALUES
-========================= */
-
-.values-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 22px;
-}
-
-.value-card {
-    padding: 35px 23px;
-    text-align: center;
-    border-radius: 25px;
-    background: linear-gradient(135deg, #0756a5, #0c91b1);
-    color: white;
-    box-shadow: 0 10px 25px #0756a530;
-    transition: 0.35s;
-    position: relative;
-    overflow: hidden;
-}
-
-.value-card::before {
-    content: "";
-    position: absolute;
-    width: 120px;
-    height: 120px;
-    border: 1px solid #ffffff25;
-    border-radius: 50%;
-    top: -65px;
-    left: -40px;
-}
-
-.value-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 0 30px #11c5d877;
-}
-
-.value-card h3 {
-    color: #ffdc91;
-    font-size: 22px;
-    margin-bottom: 10px;
-}
-
-.value-card p {
-    font-size: 15px;
-}
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact-section {
-    background:
-        radial-gradient(circle at 15% 80%, #11c5d833, transparent 35%),
-        linear-gradient(135deg, #071b36, #0756a5);
-    color: white;
-    max-width: 100%;
-    text-align: center;
-    padding: 90px 20px;
-    position: relative;
-    overflow: hidden;
-}
-
-.contact-section h2 {
-    font-size: 36px;
-    color: white;
-    margin-bottom: 15px;
-}
-
-.contact-section p {
-    color: #dceeff;
-    margin-bottom: 30px;
-    font-size: 17px;
-}
-
-.contact-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px;
-}
-
-.contact-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px 28px;
-    border-radius: 45px;
-    color: white;
-    font-weight: 900;
-    transition: 0.3s;
-    border: 1px solid #ffffff55;
-    background: #ffffff12;
-}
-
-.contact-button:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 0 25px #ffffff55;
-}
-
-.whatsapp {
-    background: linear-gradient(135deg, #00bd75, #00e08c);
-    border: none;
-    color: #063d2a;
-}
-
-.instagram {
-    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
-    border: none;
-}
-
-/* =========================
-   FLOATING WHATSAPP
-========================= */
-
-.floating-whatsapp {
-    position: fixed;
-    bottom: 25px;
-    left: 25px;
-    z-index: 999;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #08c779;
-    color: white;
-    font-size: 30px;
-    box-shadow: 0 5px 25px #00bd7580;
-    transition: 0.3s;
-    animation: whatsappPulse 2s infinite;
-}
-
-.floating-whatsapp:hover {
-    transform: scale(1.12);
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    background: #041326;
-    color: #c7d8e9;
-    text-align: center;
-    padding: 30px 15px;
-    font-size: 14px;
-    line-height: 2;
-}
-
-footer strong {
-    color: var(--cyan);
-}
-
-/* =========================
-   REVEAL ANIMATION
-========================= */
-
-.reveal {
-    opacity: 0;
-    transform: translateY(35px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.reveal.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* =========================
-   ANIMATIONS
-========================= */
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-9px); }
-}
-
-@keyframes buttonGlow {
-    from {
-        box-shadow: 0 0 12px #ffc86b77;
+    --navy:#071b36; --navy-light:#102b4d; --blue:#0756a5;
+    --blue-light:#087fd1; --cyan:#11c5d8; --gold:#ffc86b;
+    --text:#183451; --muted:#71839a; --white:#fff; --light:#f1f7fc;
+    --shadow:0 15px 45px rgba(7,38,75,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:125px}
+body{font-family:'Cairo',Tahoma,Arial,sans-serif;background:var(--light);color:var(--text);overflow-x:hidden;line-height:1.9}
+a{text-decoration:none}
+button{font-family:inherit}
+::selection{background:var(--cyan);color:var(--navy)}
+
+/* HEADER */
+header{
+    background:rgba(7,27,54,.98);color:#fff;padding:15px 5%;
+    display:flex;align-items:center;justify-content:space-between;gap:22px;
+    position:sticky;top:0;z-index:1000;box-shadow:0 5px 30px #00152c35;
+    backdrop-filter:blur(18px);border-bottom:1px solid #ffffff12
+}
+.brand{display:flex;align-items:center;gap:20px;min-width:0}
+.logos{display:flex;align-items:center;gap:13px;flex-shrink:0}
+.logos img{
+    width:106px;height:106px;object-fit:contain;background:#fff;padding:6px;
+    border-radius:21px;box-shadow:0 5px 20px #00000025;transition:.35s
+}
+.logos img:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 0 25px #11c5d855}
+.brand h2{font-size:18px;line-height:1.6;font-weight:900}
+.brand p{color:var(--cyan);font-size:14px;font-weight:800}
+nav{display:flex;align-items:center;gap:5px}
+nav a{color:#fff;padding:10px 13px;border-radius:13px;font-size:14px;font-weight:800;white-space:nowrap;transition:.3s}
+nav a:hover{background:linear-gradient(135deg,#0879d8,#11c5d8);box-shadow:0 0 18px #11c5d899;transform:translateY(-2px)}
+.menu-toggle{display:none;border:1px solid #ffffff40;background:#ffffff12;color:#fff;font-size:27px;width:48px;height:45px;border-radius:12px;cursor:pointer}
+
+/* HERO */
+.hero{
+    position:relative;min-height:660px;padding:105px 20px;display:flex;align-items:center;
+    justify-content:center;text-align:center;overflow:hidden;color:#fff;
+    background:radial-gradient(circle at 15% 80%,#0ab4ca55,transparent 35%),
+    radial-gradient(circle at 90% 10%,#1264bb,transparent 40%),
+    linear-gradient(135deg,#061a35,#0756a5,#087f9e)
+}
+.hero::before,.hero::after{content:"";position:absolute;border:1px solid #ffffff25;border-radius:50%;pointer-events:none;animation:rotate 22s linear infinite}
+.hero::before{width:650px;height:650px;top:-320px;right:-160px}
+.hero::after{width:500px;height:500px;bottom:-320px;left:-120px;animation-direction:reverse}
+.hero-light{position:absolute;width:350px;height:350px;background:#11c5d8;filter:blur(150px);opacity:.18;border-radius:50%;top:25%;left:15%;animation:lightMove 7s ease-in-out infinite alternate}
+.hero-content{position:relative;z-index:2;max-width:900px;animation:heroAppear 1s ease both}
+.badge{display:inline-block;padding:11px 28px;border:1px solid #ffffff75;border-radius:40px;background:#ffffff15;backdrop-filter:blur(10px);margin-bottom:30px;font-size:16px;font-weight:700}
+.hero h1{font-size:clamp(38px,6vw,68px);font-weight:900;line-height:1.5;margin-bottom:22px}
+.hero h1 span{display:block;color:var(--gold);text-shadow:0 0 25px #ffc86b55}
+.hero p{font-size:19px;color:#e7f6ff;max-width:780px;margin:auto;line-height:2.1}
+.hero-buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;margin-top:35px}
+.glow-button,.outline-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 34px;border-radius:45px;font-weight:900;transition:.35s}
+.glow-button{color:#09213d;background:linear-gradient(110deg,#ffe4a1,#ffc45b,#fff0c5);box-shadow:0 0 15px #ffc86b99,0 0 35px #ffc86b55;animation:buttonGlow 2.5s infinite alternate}
+.outline-button{color:#fff;border:1px solid #ffffff85;background:#ffffff12;backdrop-filter:blur(8px)}
+.glow-button:hover,.outline-button:hover{transform:translateY(-6px) scale(1.04)}
+.outline-button:hover{background:#ffffff25;box-shadow:0 0 25px #ffffff45}
+
+/* SECTIONS */
+section{padding:90px 6%;max-width:1300px;margin:auto}
+.section-title{text-align:center;margin-bottom:48px}
+.section-title span{color:#079eb8;font-size:15px;font-weight:900;letter-spacing:1px}
+.section-title h2{color:#0756a5;font-size:36px;font-weight:900;margin-top:4px}
+.section-title p{color:var(--muted);margin-top:8px;font-size:16px}
+
+/* ABOUT */
+.about-box{
+    background:#fff;padding:45px 48px;border-radius:30px;text-align:center;
+    border:1px solid #dceaf6;box-shadow:var(--shadow);font-size:18px;line-height:2.15;
+    position:relative;overflow:hidden
+}
+.about-box::before{content:"";position:absolute;top:0;right:0;width:7px;height:100%;background:linear-gradient(to bottom,var(--cyan),var(--blue),var(--gold))}
+.about-box p+p{margin-top:15px}
+.about-highlight{color:var(--blue);font-weight:800}
+
+/* MISSION / VISION / GOALS */
+.identity-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:30px}
+.identity-card{background:#fff;border:1px solid #e0edf7;padding:32px 25px;border-radius:25px;text-align:center;box-shadow:0 12px 35px #164b7610;transition:.35s;position:relative;overflow:hidden}
+.identity-card::after{content:"";position:absolute;bottom:0;right:0;width:100%;height:4px;background:linear-gradient(90deg,var(--cyan),var(--blue),var(--gold))}
+.identity-card:hover{transform:translateY(-9px);box-shadow:0 18px 40px #0756a525}
+.identity-icon{font-size:38px;margin-bottom:12px}
+.identity-card h3{color:var(--blue);font-size:22px;margin-bottom:10px}
+.identity-card p{color:var(--muted);font-size:15px}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:25px}
+.service-card{
+    --accent:#087db5;--tint:#e8f7ff;--edge:#b9e8f5;
+    position:relative;overflow:hidden;padding:35px 30px 32px;border-radius:27px;
+    text-align:right;background:linear-gradient(145deg,#fff 0%,var(--tint) 100%);
+    border:1px solid var(--edge);box-shadow:0 12px 30px #164b7610;transition:.4s
+}
+.service-card::before{content:"";position:absolute;top:0;right:0;left:0;height:7px;background:var(--accent)}
+.service-card::after{content:"";position:absolute;width:170px;height:170px;border-radius:50%;left:-85px;bottom:-105px;background:var(--accent);opacity:.07}
+.service-card:hover{transform:translateY(-9px);box-shadow:0 18px 40px #0878bd25}
+.service-card.autism{--accent:#087eae;--tint:#e8f8ff;--edge:#b9e9f5}
+.service-card.physio{--accent:#15966b;--tint:#eafaf1;--edge:#bdebd0}
+.service-card.speech{--accent:#8156bd;--tint:#f3edff;--edge:#d9c9f4}
+.service-card.occupational{--accent:#c27a16;--tint:#fff5e5;--edge:#f1d8aa}
+.service-heading{display:flex;align-items:center;gap:18px;margin-bottom:17px;position:relative;z-index:1}
+.service-icon{
+    width:82px;height:82px;flex:0 0 82px;border-radius:23px;display:flex;align-items:center;
+    justify-content:center;font-size:42px;background:#fff;border:1px solid var(--edge);
+    box-shadow:0 7px 20px #18345112
+}
+.service-card h3{color:var(--accent);font-size:23px;line-height:1.5}
+.service-card .service-subtitle{color:var(--muted);font-size:13px;font-weight:700}
+.service-card p{color:#425b73;font-size:15px;line-height:2.05;position:relative;z-index:1}
+.service-card ul{list-style:none;margin-top:13px;position:relative;z-index:1}
+.service-card li{color:#29465f;font-size:14px;line-height:1.9;padding:5px 25px 5px 0;position:relative}
+.service-card li::before{content:"✓";position:absolute;right:0;top:5px;color:var(--accent);font-weight:900}
+
+/* VALUES */
+.values-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
+.value-card{padding:35px 23px;text-align:center;border-radius:25px;background:linear-gradient(135deg,#0756a5,#0c91b1);color:#fff;box-shadow:0 10px 25px #0756a530;transition:.35s;position:relative;overflow:hidden}
+.value-card::before{content:"";position:absolute;width:120px;height:120px;border:1px solid #ffffff25;border-radius:50%;top:-65px;left:-40px}
+.value-card:hover{transform:translateY(-8px);box-shadow:0 0 30px #11c5d877}
+.value-card h3{color:#ffdc91;font-size:22px;margin-bottom:10px}
+.value-card p{font-size:15px}
+
+/* CENTER MANAGER */
+.manager-card{
+    max-width:700px;margin:0 auto;background:linear-gradient(135deg,#fff,#eaf6ff);
+    border:1px solid #d5e9f7;border-radius:25px;padding:28px 25px;text-align:center;
+    box-shadow:var(--shadow);position:relative;overflow:hidden
+}
+.manager-card::before{content:"";position:absolute;right:0;top:0;width:6px;height:100%;background:linear-gradient(var(--cyan),var(--blue),var(--gold))}
+.manager-label{color:var(--muted);font-size:15px;font-weight:700}
+.manager-name{color:var(--blue);font-size:27px;font-weight:900;margin-top:5px}
+
+/* CONTACT */
+.contact-section{background:radial-gradient(circle at 15% 80%,#11c5d833,transparent 35%),linear-gradient(135deg,#071b36,#0756a5);color:#fff;max-width:100%;text-align:center;padding:90px 20px;position:relative;overflow:hidden}
+.contact-section h2{font-size:36px;color:#fff;margin-bottom:15px}
+.contact-section p{color:#dceeff;margin-bottom:30px;font-size:17px}
+.contact-buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
+.contact-button{display:inline-flex;align-items:center;justify-content:center;padding:15px 28px;border-radius:45px;color:#fff;font-weight:900;transition:.3s;border:1px solid #ffffff55;background:#ffffff12}
+.contact-button:hover{transform:translateY(-6px);box-shadow:0 0 25px #ffffff55}
+.whatsapp{background:linear-gradient(135deg,#00bd75,#00e08c);border:none;color:#063d2a}
+.instagram{background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);border:none}
+
+/* FLOATING WHATSAPP */
+.floating-whatsapp{
+    position:fixed;bottom:25px;left:25px;z-index:999;width:62px;height:62px;
+    border-radius:50%;display:flex;align-items:center;justify-content:center;
+    background:#08c779;color:#fff;font-size:30px;box-shadow:0 5px 25px #00bd7580;
+    transition:.3s;animation:whatsappPulse 2s infinite
+}
+.floating-whatsapp:hover{transform:scale(1.12)}
+
+/* FOOTER */
+footer{background:#041326;color:#c7d8e9;text-align:center;padding:30px 15px;font-size:14px;line-height:2}
+footer strong{color:var(--cyan)}
+.site-credit{display:block;margin-top:8px;font-size:10px;color:#8297ad;letter-spacing:.5px}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(35px);transition:opacity .8s ease,transform .8s ease}
+.reveal.show{opacity:1;transform:translateY(0)}
+
+/* ANIMATIONS */
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes buttonGlow{from{box-shadow:0 0 12px #ffc86b77}to{box-shadow:0 0 30px #ffc86bbb,0 0 50px #ffc86b55}}
+@keyframes rotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes lightMove{from{transform:translate(0,0)}to{transform:translate(60px,-30px)}}
+@keyframes heroAppear{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
+@keyframes whatsappPulse{0%,100%{box-shadow:0 5px 25px #00bd7580}50%{box-shadow:0 5px 35px #00bd75cc,0 0 0 9px #00bd7520}}
+
+/* TABLET */
+@media(max-width:1050px){
+    header{padding:15px 3%}
+    .logos img{width:90px;height:90px}
+    .brand h2{font-size:16px}
+    nav a{padding:9px 10px;font-size:13px}
+}
+
+/* MOBILE */
+@media(max-width:800px){
+    header{padding:12px 16px;justify-content:space-between;gap:10px}
+    .brand{gap:10px;flex:1}
+    .logos{gap:7px}
+    .logos img{width:82px;height:82px;border-radius:16px;padding:4px}
+    .brand h2{font-size:13px;line-height:1.6}
+    .brand p{font-size:11px;line-height:1.7}
+    .menu-toggle{display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    nav{
+        position:absolute;top:100%;right:0;width:100%;background:#071b36;
+        display:flex;flex-direction:column;align-items:stretch;gap:4px;padding:0 20px;
+        max-height:0;overflow:hidden;opacity:0;visibility:hidden;
+        transition:max-height .4s ease,opacity .3s ease,padding .3s ease;
+        box-shadow:0 15px 25px #00152c35
     }
-    to {
-        box-shadow: 0 0 30px #ffc86bbb, 0 0 50px #ffc86b55;
-    }
-}
-
-@keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-@keyframes lightMove {
-    from { transform: translate(0, 0); }
-    to { transform: translate(60px, -30px); }
-}
-
-@keyframes heroAppear {
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes whatsappPulse {
-    0%, 100% {
-        box-shadow: 0 5px 25px #00bd7580;
-    }
-    50% {
-        box-shadow: 0 5px 35px #00bd75cc, 0 0 0 9px #00bd7520;
-    }
-}
-
-/* =========================
-   TABLET
-========================= */
-
-@media(max-width: 1050px) {
-    header {
-        padding: 15px 3%;
-    }
-
-    .logos img {
-        width: 76px;
-        height: 76px;
-    }
-
-    .brand h2 {
-        font-size: 16px;
-    }
-
-    nav a {
-        padding: 9px 10px;
-        font-size: 13px;
-    }
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width: 800px) {
-
-    header {
-        padding: 12px 16px;
-        justify-content: space-between;
-        gap: 10px;
-    }
-
-    .brand {
-        gap: 10px;
-        flex: 1;
-    }
-
-    .logos {
-        gap: 7px;
-    }
-
-    .logos img {
-        width: 70px;
-        height: 70px;
-        border-radius: 15px;
-        padding: 4px;
-    }
-
-    .brand h2 {
-        font-size: 13px;
-        line-height: 1.6;
-    }
-
-    .brand p {
-        font-size: 11px;
-        line-height: 1.7;
-    }
-
-    .menu-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-    }
-
-    nav {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 100%;
-        background: #071b36;
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 4px;
-        padding: 0 20px;
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
-        visibility: hidden;
-        transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
-        box-shadow: 0 15px 25px #00152c35;
-    }
-
-    nav.open {
-        max-height: 400px;
-        opacity: 1;
-        visibility: visible;
-        padding: 15px 20px 22px;
-    }
-
-    nav a {
-        width: 100%;
-        padding: 12px 15px;
-        text-align: right;
-        border-bottom: 1px solid #ffffff12;
-        font-size: 15px;
-    }
-
-    .hero {
-        min-height: 590px;
-        padding: 75px 20px;
-    }
-
-    .hero h1 {
-        font-size: clamp(36px, 9vw, 52px);
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-
-    .badge {
-        font-size: 14px;
-    }
-
-    .glow-button,
-    .outline-button {
-        padding: 13px 25px;
-        font-size: 14px;
-    }
-
-    section {
-        padding: 65px 18px;
-    }
-
-    .section-title h2 {
-        font-size: 29px;
-    }
-
-    .about-box {
-        padding: 30px 25px;
-        font-size: 16px;
-    }
-
-    .identity-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-section h2 {
-        font-size: 29px;
-    }
+    nav.open{max-height:430px;opacity:1;visibility:visible;padding:15px 20px 22px}
+    nav a{width:100%;padding:12px 15px;text-align:right;border-bottom:1px solid #ffffff12;font-size:15px}
+    .hero{min-height:590px;padding:75px 20px}
+    .hero h1{font-size:clamp(36px,9vw,52px)}
+    .hero p{font-size:16px}
+    .badge{font-size:14px}
+    .glow-button,.outline-button{padding:13px 25px;font-size:14px}
+    section{padding:65px 18px}
+    .section-title h2{font-size:29px}
+    .about-box{padding:30px 25px;font-size:16px}
+    .identity-grid{grid-template-columns:1fr}
+    .services-grid{grid-template-columns:1fr}
+    .service-card{padding:30px 23px}
+    .service-card h3{font-size:21px}
+    .contact-section h2{font-size:29px}
+    .manager-name{font-size:24px}
 }
 
 /* SMALL MOBILE */
-
-@media(max-width: 390px) {
-
-    .logos img {
-        width: 60px;
-        height: 60px;
-    }
-
-    .brand h2 {
-        font-size: 12px;
-    }
-
-    .brand p {
-        font-size: 10px;
-    }
-
-    .menu-toggle {
-        width: 42px;
-        height: 42px;
-        font-size: 24px;
-    }
-
-    .hero h1 {
-        font-size: 35px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .glow-button,
-    .outline-button {
-        width: 85%;
-    }
+@media(max-width:390px){
+    .logos img{width:70px;height:70px}
+    .brand h2{font-size:11px}
+    .brand p{font-size:9px}
+    .menu-toggle{width:42px;height:42px;font-size:24px}
+    .hero h1{font-size:35px}
+    .hero-buttons{flex-direction:column;align-items:center}
+    .glow-button,.outline-button{width:85%}
 }
 
 /* REDUCED MOTION */
-
-@media(prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation: none !important;
-        scroll-behavior: auto !important;
-        transition: none !important;
-    }
-
-    .reveal {
-        opacity: 1;
-        transform: none;
-    }
+@media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-
 <header>
-
     <div class="brand">
-
         <div class="logos">
-
-            <img src="./center-logo.jpeg"
-                 alt="شعار مركز الوفاء">
-
-            <img src="./ministry-logo.jpeg"
-                 alt="شعار وزارة التنمية الاجتماعية">
-
+            <img src="./center-logo.jpeg" alt="شعار مركز الوفاء">
+            <img src="./ministry-logo.jpeg" alt="شعار وزارة التنمية الاجتماعية">
         </div>
-
         <div>
             <h2>مركز الوفاء لتأهيل الأشخاص ذوي الإعاقة</h2>
             <p>ولاية شليم وجزر الحلانيات | محافظة ظفار</p>
         </div>
-
     </div>
 
-    <button class="menu-toggle"
-            id="menuToggle"
-            aria-label="فتح القائمة"
-            aria-expanded="false"
-            aria-controls="mainNav">
-        ☰
-    </button>
+    <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة" aria-expanded="false" aria-controls="mainNav">☰</button>
 
     <nav id="mainNav">
-
         <a href="#home">الرئيسية</a>
-
         <a href="#about">عن المركز</a>
-
         <a href="#identity">رسالتنا وأهدافنا</a>
-
         <a href="#services">خدماتنا</a>
-
         <a href="#values">قيمنا</a>
-
+        <a href="#manager">إدارة المركز</a>
         <a href="#contact">تواصل معنا</a>
-
     </nav>
-
 </header>
-
 
 <main>
 
-<!-- HERO SECTION -->
-
 <div class="hero" id="home">
-
     <div class="hero-light"></div>
-
     <div class="hero-content">
-
-        <div class="badge">
-            سلطنة عمان | محافظة ظفار
-        </div>
-
-        <h1>
-            مركز الوفاء
-            <span>نحو مستقبل أكثر تمكيناً</span>
-        </h1>
-
-        <p>
-            بيئة تأهيلية داعمة تسهم في تنمية القدرات،
-            وتعزيز الاستقلالية، وفتح آفاق المشاركة المجتمعية
-            للأشخاص ذوي الإعاقة.
-        </p>
-
+        <div class="badge">سلطنة عُمان | محافظة ظفار</div>
+        <h1>مركز الوفاء<span>نحو مستقبل أكثر تمكيناً</span></h1>
+        <p>بيئة تأهيلية داعمة تسهم في تنمية القدرات، وتعزيز الاستقلالية، وفتح آفاق المشاركة المجتمعية للأشخاص ذوي الإعاقة.</p>
         <div class="hero-buttons">
-
-            <a href="#about" class="glow-button">
-                اكتشف المركز ←
-            </a>
-
-            <a href="#contact" class="outline-button">
-                تواصل معنا
-            </a>
-
+            <a href="#about" class="glow-button">اكتشف المركز ←</a>
+            <a href="#contact" class="outline-button">تواصل معنا</a>
         </div>
-
     </div>
-
 </div>
-
-
-<!-- ABOUT -->
 
 <section id="about" class="reveal">
-
     <div class="section-title">
-
         <span>من نحن</span>
-
         <h2>عن المركز</h2>
-
-        <p>
-            رسالتنا هي دعم القدرات وتعزيز المشاركة المجتمعية
-        </p>
-
+        <p>رعاية وتأهيل وتنمية مهارات تدعم الفرد والأسرة والمجتمع</p>
     </div>
-
     <div class="about-box">
-
-        مركز الوفاء لتأهيل الأشخاص ذوي الإعاقة بولاية شليم
-        وجزر الحلانيات، بمحافظة ظفار في سلطنة عمان،
-        يعمل على دعم الأشخاص ذوي الإعاقة من خلال خدمات
-        الرعاية والتأهيل وتنمية المهارات، بما يسهم في تعزيز
-        قدراتهم واستقلاليتهم وتحسين مشاركتهم في المجتمع.
-
+        <p><span class="about-highlight">مركز الوفاء لتأهيل الأشخاص ذوي الإعاقة بولاية شليم وجزر الحلانيات</span> بمحافظة ظفار في سلطنة عُمان، بيئة تأهيلية تسعى إلى دعم الأشخاص ذوي الإعاقة وتنمية قدراتهم، من خلال خدمات وبرامج متخصصة تراعي احتياجات كل فرد وخصائصه ومستوى أدائه.</p>
+        <p>يرتكز العمل التأهيلي على تنمية مهارات التواصل واللغة والتفاعل الاجتماعي، وتعزيز التعلم والاستقلالية، وتطوير القدرات الحركية والحسية والمهارات اللازمة للحياة اليومية. كما يولي المركز أهمية للتعاون مع الأسرة، ومتابعة تطور المستفيد، والعمل وفق أهداف فردية تتناسب مع احتياجاته، بما يدعم مشاركته واندماجه في المجتمع.</p>
+        <p>وتتكامل مجالات التربية الخاصة والتأهيل السلوكي والتواصل والنطق والعلاج الطبيعي والعلاج الوظيفي لتقديم دعم متعدد الجوانب، مع مراعاة أن الخطة المناسبة تختلف من شخص إلى آخر وفق التقييم والاحتياج.</p>
     </div>
-
 </section>
-
-
-<!-- MISSION / VISION / GOALS -->
 
 <section id="identity" class="reveal">
-
     <div class="section-title">
-
         <span>هويتنا المؤسسية</span>
-
         <h2>رسالتنا ورؤيتنا وأهدافنا</h2>
-
-        <p>
-            نعمل من أجل بيئة داعمة تضع الإنسان وقدراته في المقدمة
-        </p>
-
+        <p>نعمل من أجل بيئة داعمة تضع الإنسان وقدراته في المقدمة</p>
     </div>
-
     <div class="identity-grid">
-
         <div class="identity-card">
-
             <div class="identity-icon">🎯</div>
-
             <h3>رسالتنا</h3>
-
-            <p>
-                تقديم بيئة داعمة تسهم في تنمية قدرات الأشخاص
-                ذوي الإعاقة وتعزيز استقلاليتهم ومشاركتهم المجتمعية.
-            </p>
-
+            <p>تقديم خدمات الرعاية والتأهيل وتنمية المهارات، بما يعزز قدرات الأشخاص ذوي الإعاقة واستقلاليتهم ويدعم أسرهم.</p>
         </div>
-
-
         <div class="identity-card">
-
             <div class="identity-icon">🌟</div>
-
             <h3>رؤيتنا</h3>
-
-            <p>
-                مجتمع أكثر شمولاً وتمكيناً، تتاح فيه الفرص
-                للأشخاص ذوي الإعاقة للمشاركة وتحقيق إمكاناتهم.
-            </p>
-
+            <p>مجتمع أكثر شمولاً وتمكيناً، تتاح فيه الفرص للأشخاص ذوي الإعاقة للمشاركة وتحقيق إمكاناتهم.</p>
         </div>
-
-
         <div class="identity-card">
-
             <div class="identity-icon">🚀</div>
-
             <h3>أهدافنا</h3>
-
-            <p>
-                دعم المهارات الفردية، وتعزيز الاستقلالية،
-                وتطوير فرص التواصل والتفاعل والمشاركة المجتمعية.
-            </p>
-
+            <p>تنمية المهارات الفردية، وتحسين التواصل والتفاعل، ودعم الاستقلالية، وتعزيز التعاون بين المركز والأسرة والمجتمع.</p>
         </div>
-
     </div>
-
 </section>
-
-
-<!-- SERVICES -->
 
 <section id="services" class="reveal">
-
     <div class="section-title">
-
         <span>ما نقدمه</span>
-
-        <h2>خدمات المركز</h2>
-
-        <p>
-            خدمات تأهيلية وتنموية لدعم الأفراد وأسرهم
-        </p>
-
+        <h2>مجالات الخدمات التأهيلية</h2>
+        <p>برامج ومجالات دعم تُحدد وفق احتياجات كل مستفيد وأهدافه الفردية</p>
     </div>
-
 
     <div class="services-grid">
+        <article class="service-card autism">
+            <div class="service-heading">
+                <div class="service-icon">🧩</div>
+                <div>
+                    <h3>التربية الخاصة / التوحد</h3>
+                    <div class="service-subtitle">التعلم والتواصل وتنمية المهارات</div>
+                </div>
+            </div>
+            <p>دعم نمو الطفل وتعلمه من خلال أهداف فردية وأنشطة تعليمية وتأهيلية تراعي قدراته واحتياجاته.</p>
+            <ul>
+                <li>تنمية التواصل الوظيفي واللغة التعبيرية والاستقبالية.</li>
+                <li>تحسين التفاعل الاجتماعي ومهارات اللعب والتواصل مع الآخرين.</li>
+                <li>دعم استخدام التواصل البديل والمعزز (AAC) للأطفال غير الناطقين أو ذوي التواصل المحدود، وفق احتياجهم.</li>
+                <li>تنمية الانتباه والتركيز والمهارات المعرفية.</li>
+                <li>تطوير المهارات الأكاديمية والاستعداد للتعلم.</li>
+                <li>تنمية المهارات الاستقلالية والسلوكيات التكيفية.</li>
+            </ul>
+        </article>
 
+        <article class="service-card physio">
+            <div class="service-heading">
+                <div class="service-icon">🏃</div>
+                <div>
+                    <h3>العلاج الطبيعي</h3>
+                    <div class="service-subtitle">الحركة والقدرات البدنية</div>
+                </div>
+            </div>
+            <p>دعم القدرات الحركية والوظيفية وتحسين أداء الحركة بما يتناسب مع حالة المستفيد وأهدافه العلاجية.</p>
+            <ul>
+                <li>تحسين التوازن والثبات والتحكم في وضعية الجسم.</li>
+                <li>تنمية القوة العضلية والمرونة ومدى حركة المفاصل.</li>
+                <li>تطوير المهارات الحركية الكبرى مثل الجلوس والوقوف والمشي والتنقل.</li>
+                <li>تحسين التناسق الحركي والتحكم في الحركة.</li>
+                <li>دعم القدرة على الانتقال والحركة بأمان واستقلالية أكبر.</li>
+            </ul>
+        </article>
 
-        <div class="service-card">
+        <article class="service-card speech">
+            <div class="service-heading">
+                <div class="service-icon">💬</div>
+                <div>
+                    <h3>علاج النطق واللغة</h3>
+                    <div class="service-subtitle">اللغة والتواصل والتعبير</div>
+                </div>
+            </div>
+            <p>تنمية مهارات التواصل وفهم اللغة واستخدامها، ودعم قدرة المستفيد على التعبير عن احتياجاته وأفكاره.</p>
+            <ul>
+                <li>تطوير اللغة الاستقبالية وفهم التعليمات والأسئلة.</li>
+                <li>تنمية اللغة التعبيرية وزيادة الحصيلة اللغوية.</li>
+                <li>تحسين وضوح الكلام ومخارج الأصوات عند الحاجة.</li>
+                <li>تنمية مهارات التواصل الاجتماعي والمحادثة والتبادل.</li>
+                <li>دعم وسائل التواصل البديل والمعزز عند ملاءمتها لاحتياج المستفيد.</li>
+            </ul>
+        </article>
 
-            <div class="service-icon">🧩</div>
-
-            <h3>التربية الخاصة / التوحد</h3>
-
-            <p>
-                دعم التعلم وتنمية المهارات والتواصل
-                والسلوك والقدرات الفردية.
-            </p>
-
-        </div>
-
-
-        <div class="service-card">
-
-            <div class="service-icon">🏃</div>
-
-            <h3>العلاج الطبيعي</h3>
-
-            <p>
-                دعم الحركة والقدرات البدنية وتحسين
-                التوازن والمهارات الحركية.
-            </p>
-
-        </div>
-
-
-        <div class="service-card">
-
-            <div class="service-icon">💬</div>
-
-            <h3>علاج النطق واللغة</h3>
-
-            <p>
-                دعم مهارات التواصل واللغة والتعبير
-                والتفاعل.
-            </p>
-
-        </div>
-
-
-        <div class="service-card">
-
-            <div class="service-icon">🤲</div>
-
-            <h3>العلاج الوظيفي</h3>
-
-            <p>
-                تنمية المهارات الحسية والحركية
-                ومهارات الحياة اليومية.
-            </p>
-
-        </div>
-
-
+        <article class="service-card occupational">
+            <div class="service-heading">
+                <div class="service-icon">🤲</div>
+                <div>
+                    <h3>العلاج الوظيفي</h3>
+                    <div class="service-subtitle">الاستقلالية ومهارات الحياة اليومية</div>
+                </div>
+            </div>
+            <p>مساعدة المستفيد على اكتساب المهارات التي تدعم مشاركته وأداءه للأنشطة اليومية بصورة أكثر استقلالية.</p>
+            <ul>
+                <li>تنمية مهارات الحياة اليومية والعناية بالذات.</li>
+                <li>تطوير المهارات الحركية الدقيقة والتآزر البصري الحركي.</li>
+                <li>تنمية المهارات الحركية الكبرى والتناسق الجسدي ضمن أهداف العلاج الوظيفي.</li>
+                <li>دعم مهارات ما قبل الكتابة والكتابة والتحكم بالقلم.</li>
+                <li>تنمية المعالجة الحسية والتكيف مع متطلبات البيئة والأنشطة اليومية وفق التقييم.</li>
+            </ul>
+        </article>
     </div>
-
 </section>
-
-
-<!-- VALUES -->
 
 <section id="values" class="reveal">
-
     <div class="section-title">
-
         <span>ما نؤمن به</span>
-
-        <h2>قيمنا وأهدافنا</h2>
-
-        <p>
-            نحو بيئة أكثر شمولاً وتمكيناً
-        </p>
-
+        <h2>قيمنا</h2>
+        <p>نحو بيئة أكثر شمولاً وتمكيناً</p>
     </div>
-
-
     <div class="values-grid">
-
-
-        <div class="value-card">
-
-            <h3>التمكين</h3>
-
-            <p>
-                تعزيز قدرات الأشخاص ذوي الإعاقة
-                ودعم استقلاليتهم.
-            </p>
-
-        </div>
-
-
-        <div class="value-card">
-
-            <h3>الاحترام</h3>
-
-            <p>
-                تقدير الفروق الفردية واحترام
-                كرامة كل فرد.
-            </p>
-
-        </div>
-
-
-        <div class="value-card">
-
-            <h3>الشمول</h3>
-
-            <p>
-                تعزيز فرص المشاركة والتفاعل
-                داخل المجتمع.
-            </p>
-
-        </div>
-
-
-        <div class="value-card">
-
-            <h3>التعاون</h3>
-
-            <p>
-                العمل مع الأسر والمجتمع
-                لدعم مسيرة التأهيل.
-            </p>
-
-        </div>
-
-
+        <div class="value-card"><h3>التمكين</h3><p>تعزيز قدرات الأشخاص ذوي الإعاقة ودعم استقلاليتهم.</p></div>
+        <div class="value-card"><h3>الاحترام</h3><p>تقدير الفروق الفردية واحترام كرامة كل فرد وخصوصيته.</p></div>
+        <div class="value-card"><h3>الشمول</h3><p>تعزيز فرص المشاركة والتفاعل والاندماج داخل المجتمع.</p></div>
+        <div class="value-card"><h3>التعاون</h3><p>العمل مع الأسر والمجتمع لدعم مسيرة التأهيل.</p></div>
     </div>
-
 </section>
 
-
-<!-- CONTACT -->
+<section id="manager" class="reveal">
+    <div class="section-title">
+        <span>إدارة المركز</span>
+        <h2>قيادة تسعى إلى التمكين</h2>
+    </div>
+    <div class="manager-card">
+        <div class="manager-label">رئيسة المركز</div>
+        <div class="manager-name">الأستاذة / نور باعمر</div>
+    </div>
+</section>
 
 <div class="contact-section" id="contact">
-
     <h2>نسعد بتواصلكم معنا</h2>
-
-    <p>
-        للاستفسارات والتواصل مع مركز الوفاء
-        لتأهيل الأشخاص ذوي الإعاقة
-    </p>
-
-
+    <p>للاستفسارات والتواصل مع مركز الوفاء لتأهيل الأشخاص ذوي الإعاقة</p>
     <div class="contact-buttons">
-
-
-        <a class="contact-button whatsapp"
-           href="https://wa.me/96823388904"
-           target="_blank"
-           rel="noopener noreferrer">
-
-            واتساب المركز | +968 2338 8904
-
-        </a>
-
-
-        <a class="contact-button instagram"
-           href="https://www.instagram.com/alwafaa.shaleem/"
-           target="_blank"
-           rel="noopener noreferrer">
-
-            تابعونا على إنستجرام
-
-        </a>
-
-
-        <a class="contact-button"
-           href="tel:+96823388904">
-
-            اتصل بنا
-
-        </a>
-
-
+        <a class="contact-button whatsapp" href="https://wa.me/96823388904" target="_blank" rel="noopener noreferrer">واتساب المركز | +968 2338 8904</a>
+        <a class="contact-button instagram" href="https://www.instagram.com/alwafaa.shaleem/" target="_blank" rel="noopener noreferrer">تابعونا على إنستجرام</a>
+        <a class="contact-button" href="tel:+96823388904">اتصل بنا</a>
     </div>
-
 </div>
-
 </main>
 
-
-<!-- FLOATING WHATSAPP -->
-
-<a class="floating-whatsapp"
-   href="https://wa.me/96823388904"
-   target="_blank"
-   rel="noopener noreferrer"
-   aria-label="تواصل معنا عبر واتساب">
-
-    ☎
-
-</a>
-
-
-<!-- FOOTER -->
+<a class="floating-whatsapp" href="https://wa.me/96823388904" target="_blank" rel="noopener noreferrer" aria-label="تواصل معنا عبر واتساب">☎</a>
 
 <footer>
-
     جميع الحقوق محفوظة © مركز الوفاء لتأهيل الأشخاص ذوي الإعاقة
-
     <br>
-
     ولاية شليم وجزر الحلانيات - محافظة ظفار - سلطنة عمان
-
     <br>
-
     <strong>نحو مستقبل أكثر تمكيناً</strong>
-
+    <span class="site-credit">Website designed by Mohamed Ghareib</span>
 </footer>
 
-
-<!-- JAVASCRIPT -->
-
 <script>
+const menuToggle=document.getElementById('menuToggle');
+const mainNav=document.getElementById('mainNav');
 
-// MOBILE MENU
-
-const menuToggle = document.getElementById('menuToggle');
-const mainNav = document.getElementById('mainNav');
-
-menuToggle.addEventListener('click', function() {
-
-    const isOpen = mainNav.classList.toggle('open');
-
-    menuToggle.setAttribute('aria-expanded', isOpen);
-
-    menuToggle.innerHTML = isOpen ? '✕' : '☰';
-
+menuToggle.addEventListener('click',function(){
+    const isOpen=mainNav.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded',isOpen);
+    menuToggle.setAttribute('aria-label',isOpen?'إغلاق القائمة':'فتح القائمة');
+    menuToggle.innerHTML=isOpen?'✕':'☰';
 });
 
-
-// CLOSE MENU AFTER CLICKING A LINK
-
-document.querySelectorAll('#mainNav a').forEach(link => {
-
-    link.addEventListener('click', function() {
-
+document.querySelectorAll('#mainNav a').forEach(link=>{
+    link.addEventListener('click',()=>{
         mainNav.classList.remove('open');
-
-        menuToggle.setAttribute('aria-expanded', 'false');
-
-        menuToggle.innerHTML = '☰';
-
+        menuToggle.setAttribute('aria-expanded','false');
+        menuToggle.setAttribute('aria-label','فتح القائمة');
+        menuToggle.innerHTML='☰';
     });
-
 });
 
+if('IntersectionObserver' in window){
+    const revealObserver=new IntersectionObserver(entries=>{
+        entries.forEach(entry=>{
+            if(entry.isIntersecting){
+                entry.target.classList.add('show');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    },{threshold:0.12});
+    document.querySelectorAll('.reveal').forEach(element=>revealObserver.observe(element));
+}else{
+    document.querySelectorAll('.reveal').forEach(element=>element.classList.add('show'));
+}
 
-// REVEAL ELEMENTS ON SCROLL
-
-const revealObserver = new IntersectionObserver((entries) => {
-
-    entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-            entry.target.classList.add('show');
-
-            revealObserver.unobserve(entry.target);
-
-        }
-
-    });
-
-}, { threshold: 0.12 });
-
-
-document.querySelectorAll('.reveal').forEach(element => {
-
-    revealObserver.observe(element);
-
-});
-
-
-// CLOSE MENU WHEN CLICKING OUTSIDE
-
-document.addEventListener('click', function(event) {
-
-    if (
-        !mainNav.contains(event.target) &&
-        !menuToggle.contains(event.target)
-    ) {
-
+document.addEventListener('click',function(event){
+    if(!mainNav.contains(event.target)&&!menuToggle.contains(event.target)){
         mainNav.classList.remove('open');
-
-        menuToggle.setAttribute('aria-expanded', 'false');
-
-        menuToggle.innerHTML = '☰';
-
+        menuToggle.setAttribute('aria-expanded','false');
+        menuToggle.setAttribute('aria-label','فتح القائمة');
+        menuToggle.innerHTML='☰';
     }
-
 });
-
 </script>
-
 </body>
 </html>
