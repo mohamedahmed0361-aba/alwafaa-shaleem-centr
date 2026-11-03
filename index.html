@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,74 +9,88 @@
 <meta name="description" content="الموقع الإلكتروني لمركز الوفاء لتأهيل الأشخاص ذوي الإعاقة بولاية شليم وجزر الحلانيات، محافظة ظفار، سلطنة عمان.">
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
 
-/* ===== الإعدادات العامة ===== */
+:root {
+    --navy: #071b36;
+    --blue: #0756a5;
+    --cyan: #11c5d8;
+    --gold: #ffc86b;
+    --text: #183451;
+    --muted: #71839a;
+    --white: #ffffff;
+}
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+}
+
+html {
     scroll-behavior: smooth;
 }
 
-:root {
-    --navy: #071a35;
-    --blue: #0756a5;
-    --cyan: #13c8d5;
-    --gold: #ffc66d;
-    --white: #ffffff;
-    --text: #526982;
-}
-
 body {
-    font-family: Tahoma, Arial, sans-serif;
+    font-family: 'Cairo', Tahoma, Arial, sans-serif;
     background: #f1f7fc;
-    color: var(--navy);
-    line-height: 1.9;
+    color: var(--text);
     overflow-x: hidden;
+    line-height: 1.9;
 }
 
-/* ===== الهيدر ===== */
+a {
+    text-decoration: none;
+}
+
+/* HEADER */
 
 header {
-    background: rgba(7, 26, 53, 0.97);
-    padding: 22px 5%;
+    background: rgba(7, 27, 54, 0.97);
+    color: white;
+    padding: 20px 6%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
     gap: 20px;
-    box-shadow: 0 8px 35px rgba(0,0,0,0.18);
-    position: relative;
-    z-index: 10;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 5px 30px #00152c35;
+    backdrop-filter: blur(15px);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
 .logos {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
 }
 
 .logos img {
-    width: 75px;
-    height: 75px;
+    width: 65px;
+    height: 65px;
     object-fit: contain;
     background: white;
-    border-radius: 17px;
-    padding: 7px;
-    box-shadow: 0 0 18px rgba(19,200,213,0.3);
+    padding: 5px;
+    border-radius: 15px;
 }
 
-.logo-title h2 {
-    color: white;
-    font-size: 19px;
-    line-height: 1.7;
+.brand h2 {
+    font-size: 17px;
+    line-height: 1.6;
 }
 
-.logo-title p {
+.brand p {
     color: var(--cyan);
-    font-size: 15px;
-    font-weight: bold;
+    font-size: 13px;
+    font-weight: 700;
 }
 
 nav {
@@ -88,82 +101,78 @@ nav {
 
 nav a {
     color: white;
-    text-decoration: none;
     padding: 9px 13px;
-    border-radius: 25px;
-    font-weight: bold;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
     transition: 0.3s;
 }
 
 nav a:hover {
-    color: var(--gold);
-    background: rgba(255,255,255,0.1);
+    background: linear-gradient(135deg, #0879d8, #11c5d8);
+    box-shadow: 0 0 18px #11c5d899;
 }
 
-/* ===== الواجهة الرئيسية ===== */
+/* HERO */
 
 .hero {
-    min-height: 650px;
-    padding: 100px 20px;
-    text-align: center;
-    color: white;
     position: relative;
+    min-height: 620px;
+    padding: 100px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     overflow: hidden;
-
+    color: white;
     background:
-    radial-gradient(circle at 15% 80%, rgba(19,200,213,0.35), transparent 35%),
-    radial-gradient(circle at 85% 15%, rgba(255,198,109,0.17), transparent 30%),
-    linear-gradient(135deg, #06172f, #0756a5, #087f9b);
+        radial-gradient(circle at 15% 80%, #0ab4ca55, transparent 35%),
+        radial-gradient(circle at 90% 10%, #1264bb, transparent 40%),
+        linear-gradient(135deg, #061a35, #0756a5, #087f9e);
 }
 
 .hero::before,
 .hero::after {
     content: "";
     position: absolute;
-    border: 1px solid rgba(255,255,255,0.17);
+    border: 1px solid #ffffff25;
     border-radius: 50%;
-    animation: rotateCircle 18s linear infinite;
+    animation: rotate 18s linear infinite;
 }
 
 .hero::before {
-    width: 450px;
-    height: 450px;
-    top: -180px;
-    right: -100px;
+    width: 600px;
+    height: 600px;
+    top: -300px;
+    right: -150px;
 }
 
 .hero::after {
-    width: 600px;
-    height: 600px;
-    bottom: -400px;
-    left: -150px;
-}
-
-@keyframes rotateCircle {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    width: 450px;
+    height: 450px;
+    bottom: -300px;
+    left: -100px;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 900px;
-    margin: auto;
+    max-width: 850px;
 }
 
-.hero-label {
+.badge {
     display: inline-block;
-    border: 1px solid rgba(255,255,255,0.5);
-    padding: 9px 30px;
-    border-radius: 35px;
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
+    padding: 10px 25px;
+    border: 1px solid #ffffff75;
+    border-radius: 40px;
+    background: #ffffff15;
     margin-bottom: 30px;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .hero h1 {
-    font-size: clamp(36px, 6vw, 65px);
+    font-size: clamp(35px, 6vw, 65px);
+    font-weight: 900;
     line-height: 1.5;
     margin-bottom: 20px;
 }
@@ -171,63 +180,39 @@ nav a:hover {
 .hero h1 span {
     display: block;
     color: var(--gold);
-    text-shadow: 0 0 25px rgba(255,198,109,0.4);
+    text-shadow: 0 0 25px #ffc86b55;
 }
 
 .hero p {
-    font-size: 21px;
+    font-size: 19px;
+    color: #e7f6ff;
     max-width: 750px;
-    margin: 20px auto;
-    color: #e9f8ff;
+    margin: auto;
 }
 
-.button {
+.glow-button {
     display: inline-block;
-    position: relative;
-    overflow: hidden;
+    margin-top: 35px;
     padding: 15px 35px;
-    margin: 15px 8px;
     border-radius: 40px;
-    text-decoration: none;
-    color: #09284a;
-    background: linear-gradient(120deg, #ffe2a1, #ffc66d, #fff0bd);
-    font-weight: bold;
-    font-size: 18px;
-    box-shadow: 0 0 22px rgba(255,198,109,0.4);
-    transition: 0.35s;
+    color: #09213d;
+    background: linear-gradient(110deg, #ffe4a1, #ffc45b, #fff0c5);
+    font-weight: 900;
+    box-shadow: 0 0 15px #ffc86b99, 0 0 35px #ffc86b55;
+    transition: 0.3s;
+    animation: buttonGlow 2.5s infinite alternate;
 }
 
-.button::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -120%;
-    width: 70%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.7), transparent);
-    transform: skewX(-25deg);
-    transition: 0.7s;
-}
-
-.button:hover::before {
-    left: 150%;
-}
-
-.button:hover {
+.glow-button:hover {
     transform: translateY(-5px) scale(1.04);
-    box-shadow: 0 0 35px rgba(255,198,109,0.7);
 }
 
-.button-blue {
-    color: white;
-    background: linear-gradient(120deg, #0877cf, #13c8d5);
-    box-shadow: 0 0 25px rgba(19,200,213,0.35);
-}
-
-/* ===== الأقسام ===== */
+/* GENERAL SECTIONS */
 
 section {
     padding: 85px 6%;
+    max-width: 1250px;
+    margin: auto;
 }
 
 .section-title {
@@ -235,118 +220,53 @@ section {
     margin-bottom: 45px;
 }
 
+.section-title span {
+    color: #079eb8;
+    font-size: 14px;
+    font-weight: 800;
+}
+
 .section-title h2 {
-    font-size: 36px;
     color: #0756a5;
-    margin-bottom: 10px;
+    font-size: 34px;
+    font-weight: 900;
 }
 
 .section-title p {
-    color: #71859c;
-    font-size: 17px;
+    color: var(--muted);
+    margin-top: 8px;
 }
 
-.section-title span {
-    display: block;
-    width: 75px;
-    height: 4px;
-    border-radius: 10px;
-    background: linear-gradient(90deg, #13c8d5, #ffc66d);
-    margin: 15px auto;
-}
-
-/* ===== عن المركز ===== */
+/* ABOUT */
 
 .about-box {
-    max-width: 1050px;
-    margin: auto;
+    background: white;
     padding: 45px;
-    border-radius: 30px;
-    background: white;
+    border-radius: 28px;
     text-align: center;
-    font-size: 20px;
-    color: #536d88;
-    border: 1px solid #e1edf7;
-    box-shadow: 0 15px 45px rgba(15,65,110,0.07);
-    transition: 0.4s;
+    border: 1px solid #dceaf6;
+    box-shadow: 0 15px 45px #164b7610;
+    font-size: 19px;
 }
 
-.about-box:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 18px 50px rgba(19,200,213,0.15);
-}
-
-/* ===== الرؤية والرسالة والقيم ===== */
-
-.info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 25px;
-    max-width: 1150px;
-    margin: auto;
-}
-
-.info-card {
-    padding: 32px 25px;
-    text-align: center;
-    background: white;
-    border-radius: 25px;
-    border: 1px solid #e1edf7;
-    box-shadow: 0 12px 35px rgba(15,65,110,0.07);
-    transition: 0.4s;
-}
-
-.info-card:hover {
-    transform: translateY(-9px);
-    box-shadow: 0 0 28px rgba(19,200,213,0.22);
-}
-
-.info-icon {
-    font-size: 42px;
-    margin-bottom: 15px;
-}
-
-.info-card h3 {
-    color: #0756a5;
-    font-size: 23px;
-    margin-bottom: 12px;
-}
-
-.info-card p {
-    color: #71859c;
-}
-
-/* ===== الخدمات ===== */
-
-.services-section {
-    background:
-    radial-gradient(circle at 10% 20%, rgba(19,200,213,0.08), transparent 30%),
-    #eaf3fa;
-}
+/* SERVICES */
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 27px;
-    max-width: 1200px;
-    margin: auto;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
 }
 
 .service-card {
     position: relative;
     overflow: hidden;
-    padding: 38px 25px;
+    padding: 35px 25px;
+    border-radius: 25px;
     text-align: center;
-    border-radius: 27px;
     background: white;
-    border: 1px solid rgba(255,255,255,0.8);
-    box-shadow: 0 12px 35px rgba(0,40,90,0.09);
-    transition: transform 0.4s, box-shadow 0.4s;
-    animation: cardFloat 5s ease-in-out infinite;
-}
-
-.service-card:nth-child(even) {
-    animation-delay: 1.5s;
+    border: 1px solid #dceaf6;
+    box-shadow: 0 12px 30px #164b7610;
+    transition: 0.4s;
 }
 
 .service-card::before {
@@ -354,142 +274,427 @@ section {
     position: absolute;
     top: 0;
     right: 0;
-    width: 100%;
-    height: 7px;
-    background: var(--card-color);
-}
-
-.service-card::after {
-    content: "";
-    position: absolute;
-    width: 180px;
-    height: 180px;
-    top: -100px;
-    left: -80px;
-    border-radius: 50%;
-    background: var(--card-light);
-    filter: blur(35px);
-    opacity: 0.7;
-    transition: 0.4s;
+    left: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #11c5d8, #0756a5, #ffc86b);
 }
 
 .service-card:hover {
-    transform: translateY(-12px) scale(1.025);
-    box-shadow: 0 0 30px var(--card-glow);
-}
-
-.service-card:hover::after {
-    transform: scale(2);
-}
-
-@keyframes cardFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
+    transform: translateY(-12px);
+    box-shadow: 0 15px 35px #0878bd30;
 }
 
 .service-icon {
-    width: 115px;
-    height: 115px;
-    margin: 5px auto 25px;
+    width: 95px;
+    height: 95px;
+    margin: 0 auto 20px;
+    border-radius: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 30px;
-    font-size: 53px;
-    background: var(--card-light);
-    box-shadow: 0 0 28px var(--card-glow);
-    position: relative;
-    z-index: 1;
-    animation: iconGlow 3s ease-in-out infinite;
+    font-size: 45px;
+    background: linear-gradient(135deg, #dff8ff, #e8edff);
+    box-shadow: 0 0 25px #12c5d833;
+    animation: float 3s ease-in-out infinite;
 }
 
-@keyframes iconGlow {
-    0%, 100% { box-shadow: 0 0 12px var(--card-glow); }
-    50% { box-shadow: 0 0 30px var(--card-glow); }
+.service-card:nth-child(2) .service-icon {
+    background: linear-gradient(135deg, #fff0d7, #ffe0eb);
+}
+
+.service-card:nth-child(3) .service-icon {
+    background: linear-gradient(135deg, #e0ffe9, #d7f6ff);
+}
+
+.service-card:nth-child(4) .service-icon {
+    background: linear-gradient(135deg, #eee4ff, #dceaff);
 }
 
 .service-card h3 {
-    position: relative;
-    z-index: 1;
-    font-size: 25px;
-    color: var(--card-color);
-    margin-bottom: 15px;
+    color: #0756a5;
+    font-size: 23px;
+    margin-bottom: 12px;
 }
 
 .service-card p {
-    position: relative;
-    z-index: 1;
-    color: #71859c;
-    font-size: 17px;
+    color: var(--muted);
+    font-size: 16px;
 }
 
-/* ألوان الخدمات */
+/* VALUES */
 
-.service-1 {
-    --card-color: #0878c9;
-    --card-light: #e0f2ff;
-    --card-glow: rgba(0,140,255,0.25);
-}
-
-.service-2 {
-    --card-color: #079b91;
-    --card-light: #dcfaf3;
-    --card-glow: rgba(0,200,170,0.25);
-}
-
-.service-3 {
-    --card-color: #8b55cb;
-    --card-light: #f0e5ff;
-    --card-glow: rgba(150,90,220,0.25);
-}
-
-.service-4 {
-    --card-color: #d58a18;
-    --card-light: #fff1d8;
-    --card-glow: rgba(255,170,40,0.3);
-}
-
-.service-5 {
-    --card-color: #e05b83;
-    --card-light: #ffe6ef;
-    --card-glow: rgba(235,80,130,0.25);
-}
-
-/* ===== التواصل ===== */
-
-.contact-section {
-    color: white;
-    background:
-    radial-gradient(circle at 85% 20%, rgba(19,200,213,0.2), transparent 30%),
-    linear-gradient(135deg, #06172f, #0756a5);
-}
-
-.contact-section .section-title h2 {
-    color: white;
-}
-
-.contact-section .section-title p {
-    color: #c6e8f4;
-}
-
-.contact-grid {
+.values-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 22px;
-    max-width: 1000px;
-    margin: auto;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
 }
 
-.contact-card {
+.value-card {
     padding: 30px 20px;
     text-align: center;
-    border-radius: 23px;
-    background: rgba(255,255,255,0.09);
-    border: 1px solid rgba(255,255,255,0.18);
-    backdrop-filter: blur(10px);
+    border-radius: 22px;
+    background: linear-gradient(135deg, #0756a5, #0c91b1);
+    color: white;
+    box-shadow: 0 10px 25px #0756a530;
     transition: 0.3s;
 }
 
-.contact-card:hover {
-    transform: translateY(-8px);
-    background: rgba(255,255,255,
+.value-card:hover {
+    transform: scale(1.04);
+    box-shadow: 0 0 25px #11c5d877;
+}
+
+.value-card h3 {
+    color: #ffdc91;
+    margin-bottom: 10px;
+}
+
+/* CONTACT */
+
+.contact-section {
+    background: linear-gradient(135deg, #071b36, #0756a5);
+    color: white;
+    max-width: 100%;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.contact-section h2 {
+    font-size: 34px;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.contact-section p {
+    color: #dceeff;
+    margin-bottom: 25px;
+}
+
+.contact-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 14px 25px;
+    border-radius: 40px;
+    color: white;
+    font-weight: 800;
+    transition: 0.3s;
+    border: 1px solid #ffffff55;
+}
+
+.contact-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px #ffffff55;
+}
+
+.whatsapp {
+    background: linear-gradient(135deg, #00bd75, #00e08c);
+    border: none;
+}
+
+.instagram {
+    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+    border: none;
+}
+
+/* FOOTER */
+
+footer {
+    background: #041326;
+    color: #c7d8e9;
+    text-align: center;
+    padding: 25px 15px;
+    font-size: 14px;
+}
+
+/* ANIMATIONS */
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-9px); }
+}
+
+@keyframes buttonGlow {
+    from { box-shadow: 0 0 12px #ffc86b77; }
+    to { box-shadow: 0 0 30px #ffc86bbb, 0 0 50px #ffc86b55; }
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* MOBILE */
+
+@media(max-width: 700px) {
+    header {
+        justify-content: center;
+        text-align: center;
+        padding: 18px 12px;
+    }
+
+    .brand {
+        flex-direction: column;
+    }
+
+    .brand h2 {
+        font-size: 16px;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 13px;
+        padding: 7px 9px;
+    }
+
+    .hero {
+        min-height: 570px;
+        padding: 75px 20px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    section {
+        padding: 65px 18px;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+
+    .about-box {
+        padding: 25px;
+        font-size: 17px;
+    }
+
+    .contact-section h2 {
+        font-size: 28px;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="brand">
+        <div class="logos">
+            <img src="./center-logo.jpeg" alt="شعار مركز الوفاء">
+            <img src="./ministry-logo.jpeg" alt="شعار الجهة المشرفة">
+        </div>
+
+        <div>
+            <h2>مركز الوفاء لتأهيل الأشخاص ذوي الإعاقة</h2>
+            <p>ولاية شليم وجزر الحلانيات | محافظة ظفار</p>
+        </div>
+    </div>
+
+    <nav>
+        <a href="#home">الرئيسية</a>
+        <a href="#about">عن المركز</a>
+        <a href="#services">خدماتنا</a>
+        <a href="#values">قيمنا</a>
+        <a href="#contact">تواصل معنا</a>
+    </nav>
+</header>
+
+<main>
+
+<div class="hero" id="home">
+    <div class="hero-content">
+        <div class="badge">سلطنة عمان | محافظة ظفار</div>
+
+        <h1>
+            مركز الوفاء
+            <span>نحو مستقبل أكثر تمكيناً</span>
+        </h1>
+
+        <p>
+            بيئة تأهيلية داعمة تسهم في تنمية القدرات،
+            وتعزيز الاستقلالية، وفتح آفاق المشاركة المجتمعية
+            للأشخاص ذوي الإعاقة.
+        </p>
+
+        <a href="#about" class="glow-button">اكتشف المركز ←</a>
+    </div>
+</div>
+
+<section id="about" class="reveal">
+    <div class="section-title">
+        <span>من نحن</span>
+        <h2>عن المركز</h2>
+        <p>رسالتنا هي دعم القدرات وتعزيز المشاركة المجتمعية</p>
+    </div>
+
+    <div class="about-box">
+        مركز الوفاء لتأهيل الأشخاص ذوي الإعاقة بولاية شليم
+        وجزر الحلانيات، بمحافظة ظفار في سلطنة عمان،
+        يعمل على دعم الأشخاص ذوي الإعاقة من خلال خدمات
+        الرعاية والتأهيل وتنمية المهارات، بما يسهم في تعزيز
+        قدراتهم واستقلاليتهم وتحسين مشاركتهم في المجتمع.
+    </div>
+</section>
+
+<section id="services" class="reveal">
+    <div class="section-title">
+        <span>ما نقدمه</span>
+        <h2>خدمات المركز</h2>
+        <p>خدمات تأهيلية وتنموية لدعم الأفراد وأسرهم</p>
+    </div>
+
+    <div class="services-grid">
+
+        <div class="service-card">
+            <div class="service-icon">🧩</div>
+            <h3>التربية الخاصة / التوحد</h3>
+            <p>
+                دعم التعلم وتنمية المهارات والتواصل
+                والسلوك والقدرات الفردية.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🏃</div>
+            <h3>العلاج الطبيعي</h3>
+            <p>
+                دعم الحركة والقدرات البدنية وتحسين
+                التوازن والمهارات الحركية.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">💬</div>
+            <h3>علاج النطق واللغة</h3>
+            <p>
+                دعم مهارات التواصل واللغة والتعبير
+                والتفاعل.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🤲</div>
+            <h3>العلاج الوظيفي</h3>
+            <p>
+                تنمية المهارات الحسية والحركية
+                ومهارات الحياة اليومية.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section id="values" class="reveal">
+    <div class="section-title">
+        <span>ما نؤمن به</span>
+        <h2>قيمنا وأهدافنا</h2>
+        <p>نحو بيئة أكثر شمولاً وتمكيناً</p>
+    </div>
+
+    <div class="values-grid">
+        <div class="value-card">
+            <h3>التمكين</h3>
+            <p>تعزيز قدرات الأشخاص ذوي الإعاقة ودعم استقلاليتهم.</p>
+        </div>
+
+        <div class="value-card">
+            <h3>الاحترام</h3>
+            <p>تقدير الفروق الفردية واحترام كرامة كل فرد.</p>
+        </div>
+
+        <div class="value-card">
+            <h3>الشمول</h3>
+            <p>تعزيز فرص المشاركة والتفاعل داخل المجتمع.</p>
+        </div>
+
+        <div class="value-card">
+            <h3>التعاون</h3>
+            <p>العمل مع الأسر والمجتمع لدعم مسيرة التأهيل.</p>
+        </div>
+    </div>
+</section>
+
+<div class="contact-section" id="contact">
+    <h2>نسعد بتواصلكم معنا</h2>
+    <p>
+        للاستفسارات والتواصل مع مركز الوفاء
+        لتأهيل الأشخاص ذوي الإعاقة
+    </p>
+
+    <div class="contact-buttons">
+
+        <a class="contact-button whatsapp"
+           href="https://wa.me/96823388904"
+           target="_blank"
+           rel="noopener">
+            واتساب المركز | +968 2338 8904
+        </a>
+
+        <a class="contact-button instagram"
+           href="https://www.instagram.com/alwafaa.shaleem/"
+           target="_blank"
+           rel="noopener">
+            تابعونا على إنستجرام
+        </a>
+
+        <a class="contact-button"
+           href="tel:+96823388904">
+            اتصل بنا
+        </a>
+
+    </div>
+</div>
+
+</main>
+
+<footer>
+    جميع الحقوق محفوظة © مركز الوفاء لتأهيل الأشخاص ذوي الإعاقة
+    <br>
+    ولاية شليم وجزر الحلانيات - محافظة ظفار - سلطنة عمان
+</footer>
+
+<script>
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(element => {
+    revealObserver.observe(element);
+});
+</script>
+
+</body>
+</html>
