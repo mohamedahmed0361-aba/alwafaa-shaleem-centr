@@ -4,28 +4,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>مركز الوفاء | شليم وجزر الحلانيات</title>
+<title>مركز الوفاء لتأهيل الأشخاص ذوي الإعاقة | شليم</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<meta name="description" content="الموقع الإلكتروني لمركز الوفاء لتأهيل الأشخاص ذوي الإعاقة بولاية شليم وجزر الحلانيات، محافظة ظفار، سلطنة عُمان.">
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
 
 :root {
     --navy: #071b36;
     --blue: #0756a5;
-    --cyan: #13c6d5;
-    --gold: #e8bd70;
-    --white: #ffffff;
+    --cyan: #13c5d5;
+    --gold: #f5c56c;
     --light: #f3f8fc;
     --text: #183451;
+    --muted: #71849b;
 }
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 html {
@@ -37,182 +36,208 @@ body {
     background: var(--light);
     color: var(--text);
     line-height: 1.9;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
 }
 
 /* HEADER */
 
 header {
-    background: rgba(7,27,54,0.97);
-    padding: 14px 6%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 5px 25px #071b3630;
-    border-bottom: 1px solid #ffffff18;
+    background: rgba(7, 27, 54, 0.96);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    padding: 15px 5%;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.header-content {
+    max-width: 1250px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 .brand {
     display: flex;
     align-items: center;
-    gap: 13px;
+    gap: 15px;
 }
 
-.brand img {
+.logos {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logos img {
     width: 65px;
     height: 65px;
-    object-fit: contain;
-    background: white;
     padding: 5px;
+    background: white;
     border-radius: 15px;
+    object-fit: contain;
+    box-shadow: 0 0 18px rgba(19,197,213,0.25);
 }
 
-.brand h2 {
+.brand-text h2 {
     color: white;
-    font-size: 17px;
-    line-height: 1.6;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.5;
 }
 
-.brand span {
+.brand-text p {
     color: var(--cyan);
-    display: block;
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: 700;
 }
 
 nav {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 18px;
+    gap: 8px;
 }
 
 nav a {
-    color: #eaf5ff;
-    text-decoration: none;
+    color: white;
     font-size: 14px;
     font-weight: 700;
-    transition: .3s;
+    padding: 9px 13px;
+    border-radius: 25px;
+    transition: 0.3s;
 }
 
 nav a:hover {
-    color: var(--cyan);
+    color: var(--gold);
+    background: rgba(255,255,255,0.10);
 }
 
 /* HERO */
 
 .hero {
-    min-height: 590px;
-    padding: 100px 8%;
+    position: relative;
+    min-height: 620px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding: 90px 20px;
     color: white;
-    position: relative;
     overflow: hidden;
-
     background:
-    radial-gradient(circle at 15% 20%, #13c6d544, transparent 30%),
-    radial-gradient(circle at 85% 80%, #e8bd7030, transparent 30%),
-    linear-gradient(135deg,#06172e,#0756a5 55%,#087f9c);
+        radial-gradient(circle at 15% 80%, rgba(19,197,213,0.35), transparent 35%),
+        radial-gradient(circle at 85% 15%, rgba(245,197,108,0.18), transparent 30%),
+        linear-gradient(135deg, #061a35, #0756a5 60%, #087d9c);
+}
+
+.hero::before,
+.hero::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 50%;
+    animation: rotateCircle 18s linear infinite;
 }
 
 .hero::before {
-    content: "";
-    position: absolute;
-    width: 450px;
-    height: 450px;
-    border: 1px solid #ffffff20;
-    border-radius: 50%;
-    top: -180px;
+    width: 550px;
+    height: 550px;
+    top: -220px;
     right: -100px;
 }
 
 .hero::after {
-    content: "";
-    position: absolute;
-    width: 350px;
-    height: 350px;
-    border: 1px solid #ffffff20;
-    border-radius: 50%;
-    bottom: -180px;
-    left: -80px;
+    width: 400px;
+    height: 400px;
+    bottom: -250px;
+    left: -100px;
+    animation-direction: reverse;
 }
 
 .hero-content {
-    max-width: 850px;
     position: relative;
     z-index: 2;
+    max-width: 850px;
+    animation: fadeUp 1s ease both;
 }
 
 .hero-label {
     display: inline-block;
-    padding: 7px 22px;
-    border: 1px solid #ffffff55;
-    border-radius: 30px;
-    color: #bffaff;
-    background: #ffffff12;
+    padding: 8px 25px;
+    border: 1px solid rgba(255,255,255,0.45);
+    border-radius: 40px;
+    background: rgba(255,255,255,0.10);
+    color: #d9faff;
     margin-bottom: 25px;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 .hero h1 {
-    font-size: clamp(30px,5vw,53px);
-    line-height: 1.5;
+    font-size: clamp(34px, 6vw, 65px);
     font-weight: 900;
-    margin-bottom: 20px;
+    line-height: 1.5;
+    margin-bottom: 18px;
 }
 
 .hero h1 span {
+    display: block;
     color: var(--gold);
+    text-shadow: 0 0 25px rgba(245,197,108,0.35);
 }
 
 .hero p {
-    color: #e4f4ff;
-    font-size: 18px;
+    font-size: clamp(16px, 2.5vw, 21px);
+    color: #e2f4ff;
     max-width: 700px;
-    margin: auto;
+    margin: 0 auto 30px;
 }
 
 .hero-buttons {
-    margin-top: 35px;
     display: flex;
     justify-content: center;
-    gap: 15px;
     flex-wrap: wrap;
+    gap: 15px;
 }
 
 /* BUTTONS */
 
 .btn {
-    display: inline-block;
-    padding: 13px 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 13px 30px;
     border-radius: 50px;
-    text-decoration: none;
     font-weight: 800;
-    transition: .35s;
+    transition: 0.35s;
+    cursor: pointer;
 }
 
-.btn-primary {
-    color: #071b36;
-    background: linear-gradient(135deg,#fff0bd,#e8bd70,#fff0bd);
-    box-shadow: 0 8px 25px #e8bd7055;
+.btn-gold {
+    color: #172b42;
+    background: linear-gradient(135deg, #ffe6a5, #f1b94e);
+    box-shadow: 0 0 20px rgba(245,197,108,0.45);
+    border: 1px solid rgba(255,255,255,0.5);
 }
 
-.btn-primary:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 35px #e8bd7080;
+.btn-gold:hover {
+    transform: translateY(-5px) scale(1.04);
+    box-shadow: 0 0 35px rgba(245,197,108,0.8);
 }
 
 .btn-outline {
     color: white;
-    border: 1px solid #ffffff90;
-    background: #ffffff12;
-    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.65);
+    background: rgba(255,255,255,0.08);
 }
 
 .btn-outline:hover {
@@ -224,7 +249,7 @@ nav a:hover {
 /* GENERAL SECTIONS */
 
 section {
-    padding: 85px 7%;
+    padding: 85px 6%;
 }
 
 .section-heading {
@@ -233,98 +258,134 @@ section {
 }
 
 .section-heading span {
-    color: #079eaf;
-    font-weight: 800;
+    color: #0baec0;
     font-size: 14px;
+    font-weight: 800;
 }
 
 .section-heading h2 {
     color: var(--navy);
-    font-size: 32px;
+    font-size: clamp(27px, 4vw, 38px);
     font-weight: 900;
     margin-top: 5px;
 }
 
 .section-heading p {
-    color: #718399;
+    color: var(--muted);
     margin-top: 8px;
 }
 
 /* ABOUT */
 
+.about-section {
+    background: white;
+}
+
 .about-box {
     max-width: 1050px;
     margin: auto;
-    padding: 40px;
-    background: white;
-    border-radius: 25px;
-    box-shadow: 0 15px 45px #092d4c0d;
-    border: 1px solid #e5eef6;
+    padding: 45px;
     text-align: center;
+    border-radius: 30px;
+    background: linear-gradient(145deg, #ffffff, #f2f9ff);
+    border: 1px solid #e1edf6;
+    box-shadow: 0 15px 45px rgba(15,65,110,0.07);
+    position: relative;
+    overflow: hidden;
+}
+
+.about-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--cyan), var(--blue), var(--gold));
 }
 
 .about-box p {
-    font-size: 17px;
-    color: #526b82;
+    font-size: 19px;
+    color: #536c86;
 }
 
-/* VISION */
+/* VISION AND MISSION */
 
-.vision-grid {
+.values-section {
+    background: linear-gradient(180deg, #f3f8fc, #eaf5fa);
+}
+
+.values-grid {
+    max-width: 1100px;
+    margin: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
-    gap: 22px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
 }
 
-.vision-card {
-    padding: 30px;
-    background: linear-gradient(145deg,#ffffff,#eaf6fc);
-    border-radius: 22px;
-    border: 1px solid #dcecf5;
-    transition: .35s;
+.value-card {
+    position: relative;
+    padding: 35px 25px;
+    text-align: center;
+    border-radius: 25px;
+    background: white;
+    border: 1px solid #dcebf4;
+    box-shadow: 0 12px 35px rgba(7,60,110,0.07);
+    transition: 0.4s;
+    overflow: hidden;
 }
 
-.vision-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px #0756a51c;
+.value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(19,197,213,0.20);
 }
 
-.vision-icon {
+.value-icon {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 18px;
+    display: grid;
+    place-items: center;
+    border-radius: 23px;
     font-size: 35px;
-    margin-bottom: 12px;
+    background: linear-gradient(135deg, #e0faff, #e8edff);
 }
 
-.vision-card h3 {
+.value-card h3 {
     color: var(--blue);
-    margin-bottom: 8px;
+    font-size: 22px;
+    margin-bottom: 10px;
 }
 
-.vision-card p {
-    color: #60758b;
+.value-card p {
+    color: var(--muted);
 }
 
 /* SERVICES */
 
 .services-section {
-    background: linear-gradient(180deg,#edf6fc,#ffffff);
+    background: white;
 }
 
 .services-grid {
+    max-width: 1200px;
+    margin: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
 }
 
 .service-card {
-    background: white;
-    border-radius: 22px;
-    padding: 30px 24px;
-    text-align: center;
-    box-shadow: 0 8px 30px #092d4c0b;
-    border: 1px solid #e5eef6;
-    transition: .35s;
     position: relative;
+    background: white;
+    border-radius: 25px;
+    padding: 35px 25px;
+    text-align: center;
+    border: 1px solid #e0eaf2;
+    box-shadow: 0 10px 30px rgba(15,55,100,0.07);
     overflow: hidden;
+    transition: transform 0.4s, box-shadow 0.4s;
+    animation: fadeUp 0.8s ease both;
 }
 
 .service-card::before {
@@ -332,204 +393,309 @@ section {
     position: absolute;
     top: 0;
     right: 0;
-    height: 4px;
     width: 100%;
-    background: linear-gradient(90deg,var(--cyan),var(--blue),var(--gold));
+    height: 5px;
+    background: linear-gradient(90deg, #12c6d4, #0756a5, #f5c56c);
+}
+
+.service-card::after {
+    content: "";
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: rgba(19,197,213,0.07);
+    top: -100px;
+    left: -90px;
+    transition: 0.5s;
 }
 
 .service-card:hover {
-    transform: translateY(-9px);
-    box-shadow: 0 18px 40px #0756a525;
+    transform: translateY(-12px);
+    box-shadow: 0 18px 45px rgba(7,86,165,0.16);
+}
+
+.service-card:hover::after {
+    transform: scale(2);
 }
 
 .service-icon {
-    width: 75px;
-    height: 75px;
-    margin: 0 auto 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 22px;
-    font-size: 35px;
-    background: linear-gradient(135deg,#e2faff,#e8f0ff);
+    position: relative;
+    z-index: 1;
+    width: 95px;
+    height: 95px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 22px;
+    border-radius: 28px;
+    font-size: 43px;
+    background: linear-gradient(135deg, #e4faff, #edf1ff);
+    box-shadow: 0 0 25px rgba(19,197,213,0.12);
+    transition: 0.4s;
+}
+
+.service-card:hover .service-icon {
+    transform: rotate(-8deg) scale(1.1);
+    box-shadow: 0 0 28px rgba(19,197,213,0.35);
 }
 
 .service-card h3 {
+    position: relative;
+    z-index: 1;
     color: var(--blue);
-    margin-bottom: 10px;
-    font-size: 19px;
+    font-size: 21px;
+    font-weight: 900;
+    margin-bottom: 12px;
 }
 
 .service-card p {
-    color: #718399;
-    font-size: 14px;
-}
-
-/* VALUES */
-
-.values {
-    background: var(--navy);
-    color: white;
-    text-align: center;
-}
-
-.values .section-heading h2 {
-    color: white;
-}
-
-.values .section-heading p {
-    color: #c4d5e8;
-}
-
-.values-list {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.value-item {
-    padding: 13px 25px;
-    border-radius: 40px;
-    background: #ffffff12;
-    border: 1px solid #ffffff30;
-    color: #e8f8ff;
-    font-weight: 700;
-    transition: .3s;
-}
-
-.value-item:hover {
-    background: linear-gradient(135deg,#087da3,#13c6d5);
-    transform: translateY(-4px);
+    position: relative;
+    z-index: 1;
+    color: var(--muted);
+    font-size: 15px;
 }
 
 /* CONTACT */
 
-.contact-box {
-    max-width: 850px;
-    margin: auto;
-    padding: 45px 25px;
-    text-align: center;
-    border-radius: 28px;
+.contact-section {
     color: white;
     background:
-    radial-gradient(circle at top left,#13c6d544,transparent 35%),
-    linear-gradient(135deg,#071b36,#0756a5);
-    box-shadow: 0 20px 45px #0756a530;
+        radial-gradient(circle at 10% 90%, rgba(19,197,213,0.25), transparent 30%),
+        linear-gradient(135deg, #071b36, #0756a5);
 }
 
-.contact-box h2 {
-    font-size: 30px;
-    margin-bottom: 12px;
+.contact-section .section-heading h2 {
+    color: white;
 }
 
-.contact-box p {
-    color: #e0efff;
-    margin-bottom: 25px;
+.contact-section .section-heading p {
+    color: #d0e6f4;
+}
+
+.contact-grid {
+    max-width: 1050px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+.contact-card {
+    padding: 28px 20px;
+    text-align: center;
+    border-radius: 22px;
+    background: rgba(255,255,255,0.09);
+    border: 1px solid rgba(255,255,255,0.20);
+    transition: 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255,255,255,0.15);
+    box-shadow: 0 0 25px rgba(19,197,213,0.2);
+}
+
+.contact-icon {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.contact-card h3 {
+    color: var(--gold);
+    margin-bottom: 8px;
+}
+
+.contact-card p,
+.contact-card a {
+    color: white;
+    overflow-wrap: anywhere;
+}
+
+.contact-card a:hover {
+    color: var(--cyan);
 }
 
 /* FOOTER */
 
 footer {
-    background: #041326;
-    color: #b9cce0;
+    background: #041329;
+    color: #c8d7e7;
     text-align: center;
-    padding: 28px 15px;
-    font-size: 14px;
+    padding: 30px 15px;
 }
 
 footer strong {
-    color: var(--gold);
+    color: white;
+}
+
+.footer-instagram {
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--cyan);
+    font-weight: 700;
+}
+
+/* FLOATING WHATSAPP */
+
+.whatsapp-float {
+    position: fixed;
+    z-index: 1500;
+    bottom: 25px;
+    left: 22px;
+    width: 60px;
+    height: 60px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #35e58a, #0ca65d);
+    color: white;
+    font-size: 29px;
+    box-shadow: 0 0 22px rgba(37,211,102,0.55);
+    animation: pulse 2s infinite;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes rotateCircle {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(37,211,102,0.4);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(37,211,102,0.85);
+    }
 }
 
 /* MOBILE */
 
-@media(max-width:750px) {
-
+@media (max-width: 800px) {
     header {
-        justify-content: center;
-        text-align: center;
+        position: relative;
+        padding: 18px 12px;
+    }
+
+    .header-content {
+        flex-direction: column;
     }
 
     .brand {
-        justify-content: center;
-        flex-wrap: wrap;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .brand-text h2 {
+        font-size: 17px;
     }
 
     nav {
         justify-content: center;
-        gap: 12px;
+        gap: 3px;
     }
 
     nav a {
-        font-size: 12px;
+        font-size: 13px;
+        padding: 7px 9px;
     }
 
     .hero {
-        padding: 75px 20px;
-        min-height: 500px;
+        min-height: 570px;
+        padding: 70px 20px;
     }
 
-    .hero p {
-        font-size: 15px;
+    .hero h1 {
+        font-size: 36px;
     }
 
     section {
-        padding: 60px 20px;
+        padding: 65px 18px;
     }
 
     .about-box {
-        padding: 25px 20px;
+        padding: 30px 20px;
     }
 
-    .section-heading h2 {
-        font-size: 26px;
+    .about-box p {
+        font-size: 17px;
+    }
+
+    .services-grid,
+    .values-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
     }
 }
 
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
 </style>
 </head>
 
 <body>
 
 <header>
+    <div class="header-content">
 
-    <div class="brand">
+        <div class="brand">
 
-        <img src="center-logo.jpg.jpeg" alt="شعار مركز الوفاء">
+            <div class="logos">
+                <img src="center-logo.jpg.jpeg" alt="شعار مركز الوفاء">
+                <img src="ministry-logo.jpg.jpeg" alt="شعار سلطنة عُمان">
+            </div>
 
-        <img src="ministry-logo.jpg.jpeg" alt="شعار وزارة التنمية الاجتماعية">
+            <div class="brand-text">
+                <h2>مركز الوفاء لتأهيل الأشخاص ذوي الإعاقة</h2>
+                <p>ولاية شليم وجزر الحلانيات | محافظة ظفار</p>
+            </div>
 
-        <h2>
-            مركز الوفاء لتأهيل الأشخاص ذوي الإعاقة
-            <span>ولاية شليم وجزر الحلانيات | محافظة ظفار</span>
-        </h2>
+        </div>
+
+        <nav>
+            <a href="#home">الرئيسية</a>
+            <a href="#about">عن المركز</a>
+            <a href="#vision">رؤيتنا</a>
+            <a href="#services">الخدمات</a>
+            <a href="#contact">تواصل معنا</a>
+        </nav>
 
     </div>
-
-    <nav>
-        <a href="#home">الرئيسية</a>
-        <a href="#about">عن المركز</a>
-        <a href="#vision">رؤيتنا</a>
-        <a href="#services">الخدمات</a>
-        <a href="#values">قيمنا</a>
-        <a href="#contact">تواصل معنا</a>
-    </nav>
-
 </header>
 
 
-<!-- HERO -->
+<!-- الرئيسية -->
 
 <div class="hero" id="home">
 
     <div class="hero-content">
 
-        <span class="hero-label">سلطنة عُمان | محافظة ظفار</span>
+        <div class="hero-label">
+            سلطنة عُمان | محافظة ظفار
+        </div>
 
         <h1>
             مركز الوفاء
-            <br>
             <span>نحو مستقبل أكثر تمكيناً</span>
         </h1>
 
@@ -540,15 +706,13 @@ footer strong {
         </p>
 
         <div class="hero-buttons">
-
-            <a href="#about" class="btn btn-primary">
-                اكتشف المركز
+            <a href="#about" class="btn btn-gold">
+                اكتشف المركز ✨
             </a>
 
             <a href="#services" class="btn btn-outline">
                 تعرف على خدماتنا
             </a>
-
         </div>
 
     </div>
@@ -556,14 +720,14 @@ footer strong {
 </div>
 
 
-<!-- ABOUT -->
+<!-- عن المركز -->
 
-<section id="about">
+<section class="about-section" id="about">
 
     <div class="section-heading">
         <span>من نحن</span>
         <h2>عن مركز الوفاء</h2>
-        <p>معاً نحو بيئة أكثر دعماً واحتواءً</p>
+        <p>معاً نحو التأهيل والتمكين والاستقلالية</p>
     </div>
 
     <div class="about-box">
@@ -572,8 +736,8 @@ footer strong {
             مركز الوفاء لتأهيل الأشخاص ذوي الإعاقة بولاية شليم
             وجزر الحلانيات، بمحافظة ظفار في سلطنة عُمان،
             يعمل على دعم الأشخاص ذوي الإعاقة من خلال خدمات
-            الرعاية والتأهيل وتنمية المهارات، بما يسهم في تعزيز
-            قدراتهم واستقلاليتهم وتحسين مشاركتهم في المجتمع.
+            الرعاية والتأهيل وتنمية المهارات، بما يسهم في
+            تعزيز قدراتهم واستقلاليتهم وتحسين مشاركتهم في المجتمع.
         </p>
 
     </div>
@@ -581,54 +745,42 @@ footer strong {
 </section>
 
 
-<!-- VISION -->
+<!-- الرؤية والرسالة والقيم -->
 
-<section id="vision">
+<section class="values-section" id="vision">
 
     <div class="section-heading">
         <span>طموحنا ورسالتنا</span>
-        <h2>رؤيتنا ورسالتنا وأهدافنا</h2>
+        <h2>رؤيتنا ورسالتنا</h2>
     </div>
 
-    <div class="vision-grid">
+    <div class="values-grid">
 
-        <div class="vision-card">
-
-            <div class="vision-icon">🌟</div>
-
+        <div class="value-card">
+            <div class="value-icon">🌟</div>
             <h3>رؤيتنا</h3>
-
             <p>
-                الإسهام في بناء مجتمع داعم يتيح للأشخاص ذوي
-                الإعاقة فرصاً للنمو والمشاركة والاستقلالية.
+                مجتمع أكثر شمولاً وتمكيناً، تتاح فيه الفرص
+                للأشخاص ذوي الإعاقة للمشاركة والاستقلالية.
             </p>
-
         </div>
 
-        <div class="vision-card">
-
-            <div class="vision-icon">🤝</div>
-
+        <div class="value-card">
+            <div class="value-icon">🤝</div>
             <h3>رسالتنا</h3>
-
             <p>
-                تقديم الرعاية والتأهيل في بيئة آمنة ومحفزة،
-                تراعي احتياجات الأفراد وتدعم قدراتهم.
+                تقديم خدمات التأهيل والرعاية وتنمية المهارات
+                في بيئة داعمة تحترم احتياجات وقدرات كل فرد.
             </p>
-
         </div>
 
-        <div class="vision-card">
-
-            <div class="vision-icon">🎯</div>
-
-            <h3>أهدافنا</h3>
-
+        <div class="value-card">
+            <div class="value-icon">💙</div>
+            <h3>قيمنا</h3>
             <p>
-                تنمية المهارات، وتعزيز الاستقلالية،
-                ودعم التواصل والتفاعل والمشاركة المجتمعية.
+                الاحترام، والإنسانية، والتمكين،
+                والعمل بروح الفريق، وتكافؤ الفرص.
             </p>
-
         </div>
 
     </div>
@@ -636,66 +788,64 @@ footer strong {
 </section>
 
 
-<!-- SERVICES -->
+<!-- الخدمات -->
 
 <section class="services-section" id="services">
 
     <div class="section-heading">
-        <span>ماذا نقدم؟</span>
-        <h2>مجالات التأهيل والخدمات</h2>
-        <p>مجالات العمل التأهيلي وتنمية المهارات</p>
+        <span>خدماتنا التأهيلية</span>
+        <h2>الخدمات التي يقدمها المركز</h2>
+        <p>
+            نعمل على دعم وتنمية قدرات المستفيدين من خلال
+            مجموعة من الخدمات التأهيلية.
+        </p>
     </div>
 
     <div class="services-grid">
 
         <div class="service-card">
-
             <div class="service-icon">🧩</div>
-
-            <h3>التأهيل السلوكي</h3>
-
+            <h3>التربية الخاصة / التوحد</h3>
             <p>
-                تنمية المهارات السلوكية والتواصلية والاجتماعية
-                وفق احتياجات كل مستفيد.
+                دعم التعلم وتنمية المهارات المعرفية
+                والسلوكية والتواصلية والاجتماعية.
             </p>
-
         </div>
 
         <div class="service-card">
-
-            <div class="service-icon">🖐️</div>
-
+            <div class="service-icon">🦾</div>
             <h3>العلاج الوظيفي</h3>
-
             <p>
-                دعم المهارات الحركية والحسية ومهارات الحياة اليومية.
+                تنمية المهارات الحركية والحسية
+                ومهارات الحياة اليومية والاستقلالية.
             </p>
-
         </div>
 
         <div class="service-card">
-
             <div class="service-icon">💬</div>
-
             <h3>علاج النطق واللغة</h3>
-
             <p>
-                دعم مهارات التواصل واللغة والتعبير والتفاعل.
+                دعم مهارات التواصل واللغة
+                والتعبير والتفاعل.
             </p>
-
         </div>
 
         <div class="service-card">
+            <div class="service-icon">🏃</div>
+            <h3>العلاج الطبيعي</h3>
+            <p>
+                دعم القدرات الحركية وتحسين الحركة
+                والتوازن والمهارات البدنية.
+            </p>
+        </div>
 
+        <div class="service-card">
             <div class="service-icon">📚</div>
-
             <h3>تنمية المهارات</h3>
-
             <p>
                 تنمية القدرات المعرفية والاجتماعية
-                ومهارات الاعتماد على النفس.
+                ومهارات التواصل والاستقلالية.
             </p>
-
         </div>
 
     </div>
@@ -703,72 +853,89 @@ footer strong {
 </section>
 
 
-<!-- VALUES -->
+<!-- التواصل -->
 
-<section class="values" id="values">
+<section class="contact-section" id="contact">
 
     <div class="section-heading">
-        <span>ما نؤمن به</span>
-        <h2>قيمنا</h2>
-        <p>مبادئ توجه عملنا وتحدد هويتنا</p>
-    </div>
-
-    <div class="values-list">
-
-        <div class="value-item">الاحترام والتقدير</div>
-
-        <div class="value-item">الإنسانية</div>
-
-        <div class="value-item">الدمج المجتمعي</div>
-
-        <div class="value-item">التمكين والاستقلالية</div>
-
-        <div class="value-item">الجودة والتطوير</div>
-
-        <div class="value-item">العمل بروح الفريق</div>
-
-    </div>
-
-</section>
-
-
-<!-- CONTACT -->
-
-<section id="contact">
-
-    <div class="contact-box">
-
-        <h2>نسعد بتواصلكم معنا</h2>
-
+        <span>نسعد بتواصلكم</span>
+        <h2>تواصل معنا</h2>
         <p>
             للاستفسارات والتواصل مع مركز الوفاء
-            لتأهيل الأشخاص ذوي الإعاقة.
         </p>
+    </div>
 
-        <a href="#about" class="btn btn-primary">
-            تعرف على المركز
-        </a>
+    <div class="contact-grid">
+
+        <div class="contact-card">
+            <div class="contact-icon">📍</div>
+            <h3>موقع المركز</h3>
+            <p>
+                ولاية شليم وجزر الحلانيات<br>
+                محافظة ظفار - سلطنة عُمان
+            </p>
+        </div>
+
+        <div class="contact-card">
+            <div class="contact-icon">📞</div>
+            <h3>رقم المركز</h3>
+            <a href="tel:+96823388904" dir="ltr">
+                +968 2338 8904
+            </a>
+        </div>
+
+        <div class="contact-card">
+            <div class="contact-icon">💬</div>
+            <h3>واتساب</h3>
+            <a href="https://wa.me/96823388904" target="_blank" rel="noopener">
+                تواصل معنا عبر واتساب
+            </a>
+        </div>
+
+        <div class="contact-card">
+            <div class="contact-icon">📸</div>
+            <h3>إنستجرام المركز</h3>
+            <a href="https://www.instagram.com/alwafaa.shaleem/" target="_blank" rel="noopener">
+                @alwafaa.shaleem
+            </a>
+        </div>
 
     </div>
 
 </section>
 
-
-<!-- FOOTER -->
 
 <footer>
 
     <strong>مركز الوفاء لتأهيل الأشخاص ذوي الإعاقة</strong>
 
-    <br>
+    <p>
+        ولاية شليم وجزر الحلانيات - محافظة ظفار - سلطنة عُمان
+    </p>
 
-    ولاية شليم وجزر الحلانيات - محافظة ظفار - سلطنة عُمان
+    <a class="footer-instagram"
+       href="https://www.instagram.com/alwafaa.shaleem/"
+       target="_blank"
+       rel="noopener">
+        تابعونا على إنستجرام @alwafaa.shaleem
+    </a>
 
-    <br><br>
-
-    جميع الحقوق محفوظة © مركز الوفاء
+    <p style="margin-top:15px; font-size:13px;">
+        جميع الحقوق محفوظة © مركز الوفاء
+    </p>
 
 </footer>
+
+
+<!-- زر واتساب العائم -->
+
+<a class="whatsapp-float"
+   href="https://wa.me/96823388904"
+   target="_blank"
+   rel="noopener"
+   aria-label="تواصل عبر واتساب">
+    ☎
+</a>
 
 </body>
 </html>
