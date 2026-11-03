@@ -7,18 +7,25 @@
 <title>مركز الوفاء لتأهيل الأشخاص ذوي الإعاقة</title>
 
 <meta name="description" content="الموقع الإلكتروني لمركز الوفاء لتأهيل الأشخاص ذوي الإعاقة بولاية شليم وجزر الحلانيات، محافظة ظفار، سلطنة عمان.">
+<meta name="theme-color" content="#071b36">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
-
 :root {
     --navy: #071b36;
+    --navy-light: #102b4d;
     --blue: #0756a5;
+    --blue-light: #087fd1;
     --cyan: #11c5d8;
     --gold: #ffc86b;
     --text: #183451;
     --muted: #71839a;
     --white: #ffffff;
+    --light: #f1f7fc;
+    --shadow: 0 15px 45px rgba(7, 38, 75, 0.10);
 }
 
 * {
@@ -29,11 +36,12 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 110px;
 }
 
 body {
     font-family: 'Cairo', Tahoma, Arial, sans-serif;
-    background: #f1f7fc;
+    background: var(--light);
     color: var(--text);
     overflow-x: hidden;
     line-height: 1.9;
@@ -43,88 +51,125 @@ a {
     text-decoration: none;
 }
 
-/* HEADER */
+button {
+    font-family: inherit;
+}
+
+::selection {
+    background: var(--cyan);
+    color: var(--navy);
+}
+
+/* =========================
+   HEADER
+========================= */
 
 header {
     background: rgba(7, 27, 54, 0.97);
     color: white;
-    padding: 20px 6%;
+    padding: 15px 5%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
+    gap: 25px;
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 5px 30px #00152c35;
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid #ffffff12;
 }
 
 .brand {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 18px;
 }
 
 .logos {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    flex-shrink: 0;
 }
 
 .logos img {
-    width: 65px;
-    height: 65px;
+    width: 88px;
+    height: 88px;
     object-fit: contain;
     background: white;
-    padding: 5px;
-    border-radius: 15px;
+    padding: 6px;
+    border-radius: 19px;
+    box-shadow: 0 5px 20px #00000025;
+    transition: 0.35s;
+}
+
+.logos img:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 0 25px #11c5d855;
 }
 
 .brand h2 {
-    font-size: 17px;
+    font-size: 18px;
     line-height: 1.6;
+    font-weight: 900;
 }
 
 .brand p {
     color: var(--cyan);
-    font-size: 13px;
-    font-weight: 700;
+    font-size: 14px;
+    font-weight: 800;
 }
 
 nav {
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+    align-items: center;
+    gap: 5px;
 }
 
 nav a {
     color: white;
-    padding: 9px 13px;
-    border-radius: 12px;
+    padding: 10px 14px;
+    border-radius: 13px;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 800;
     transition: 0.3s;
+    white-space: nowrap;
 }
 
 nav a:hover {
     background: linear-gradient(135deg, #0879d8, #11c5d8);
     box-shadow: 0 0 18px #11c5d899;
+    transform: translateY(-2px);
 }
 
-/* HERO */
+.menu-toggle {
+    display: none;
+    border: 1px solid #ffffff40;
+    background: #ffffff12;
+    color: white;
+    font-size: 27px;
+    width: 48px;
+    height: 45px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+/* =========================
+   HERO
+========================= */
 
 .hero {
     position: relative;
-    min-height: 620px;
-    padding: 100px 20px;
+    min-height: 660px;
+    padding: 105px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     overflow: hidden;
     color: white;
+
     background:
         radial-gradient(circle at 15% 80%, #0ab4ca55, transparent 35%),
         radial-gradient(circle at 90% 10%, #1264bb, transparent 40%),
@@ -137,44 +182,63 @@ nav a:hover {
     position: absolute;
     border: 1px solid #ffffff25;
     border-radius: 50%;
-    animation: rotate 18s linear infinite;
+    pointer-events: none;
+    animation: rotate 22s linear infinite;
 }
 
 .hero::before {
-    width: 600px;
-    height: 600px;
-    top: -300px;
-    right: -150px;
+    width: 650px;
+    height: 650px;
+    top: -320px;
+    right: -160px;
 }
 
 .hero::after {
-    width: 450px;
-    height: 450px;
-    bottom: -300px;
-    left: -100px;
+    width: 500px;
+    height: 500px;
+    bottom: -320px;
+    left: -120px;
+    animation-direction: reverse;
+}
+
+.hero-light {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: #11c5d8;
+    filter: blur(150px);
+    opacity: 0.18;
+    border-radius: 50%;
+    top: 25%;
+    left: 15%;
+    animation: lightMove 7s ease-in-out infinite alternate;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 850px;
+    max-width: 900px;
+    animation: heroAppear 1s ease both;
 }
 
 .badge {
     display: inline-block;
-    padding: 10px 25px;
+    padding: 11px 28px;
     border: 1px solid #ffffff75;
     border-radius: 40px;
     background: #ffffff15;
+    backdrop-filter: blur(10px);
     margin-bottom: 30px;
     font-size: 16px;
+    font-weight: 700;
+    box-shadow: 0 0 25px #ffffff10;
 }
 
 .hero h1 {
-    font-size: clamp(35px, 6vw, 65px);
+    font-size: clamp(38px, 6vw, 68px);
     font-weight: 900;
     line-height: 1.5;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
 .hero h1 span {
@@ -186,70 +250,174 @@ nav a:hover {
 .hero p {
     font-size: 19px;
     color: #e7f6ff;
-    max-width: 750px;
+    max-width: 780px;
     margin: auto;
+    line-height: 2.1;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 35px;
+}
+
+.glow-button,
+.outline-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 15px 34px;
+    border-radius: 45px;
+    font-weight: 900;
+    transition: 0.35s;
 }
 
 .glow-button {
-    display: inline-block;
-    margin-top: 35px;
-    padding: 15px 35px;
-    border-radius: 40px;
     color: #09213d;
     background: linear-gradient(110deg, #ffe4a1, #ffc45b, #fff0c5);
-    font-weight: 900;
     box-shadow: 0 0 15px #ffc86b99, 0 0 35px #ffc86b55;
-    transition: 0.3s;
     animation: buttonGlow 2.5s infinite alternate;
 }
 
-.glow-button:hover {
-    transform: translateY(-5px) scale(1.04);
+.outline-button {
+    color: white;
+    border: 1px solid #ffffff85;
+    background: #ffffff12;
+    backdrop-filter: blur(8px);
 }
 
-/* GENERAL SECTIONS */
+.glow-button:hover,
+.outline-button:hover {
+    transform: translateY(-6px) scale(1.04);
+}
+
+.outline-button:hover {
+    background: #ffffff25;
+    box-shadow: 0 0 25px #ffffff45;
+}
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
 
 section {
-    padding: 85px 6%;
-    max-width: 1250px;
+    padding: 90px 6%;
+    max-width: 1300px;
     margin: auto;
 }
 
 .section-title {
     text-align: center;
-    margin-bottom: 45px;
+    margin-bottom: 48px;
 }
 
 .section-title span {
     color: #079eb8;
-    font-size: 14px;
-    font-weight: 800;
+    font-size: 15px;
+    font-weight: 900;
+    letter-spacing: 1px;
 }
 
 .section-title h2 {
     color: #0756a5;
-    font-size: 34px;
+    font-size: 36px;
     font-weight: 900;
+    margin-top: 4px;
 }
 
 .section-title p {
     color: var(--muted);
     margin-top: 8px;
+    font-size: 16px;
 }
 
-/* ABOUT */
+/* =========================
+   ABOUT
+========================= */
 
 .about-box {
     background: white;
-    padding: 45px;
-    border-radius: 28px;
+    padding: 48px;
+    border-radius: 30px;
     text-align: center;
     border: 1px solid #dceaf6;
-    box-shadow: 0 15px 45px #164b7610;
+    box-shadow: var(--shadow);
     font-size: 19px;
+    line-height: 2.2;
+    position: relative;
+    overflow: hidden;
 }
 
-/* SERVICES */
+.about-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 7px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--cyan), var(--blue), var(--gold));
+}
+
+/* =========================
+   MISSION / VISION / GOALS
+========================= */
+
+.identity-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 30px;
+}
+
+.identity-card {
+    background: white;
+    border: 1px solid #e0edf7;
+    padding: 32px 25px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 12px 35px #164b7610;
+    transition: 0.35s;
+    position: relative;
+    overflow: hidden;
+}
+
+.identity-card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--cyan), var(--blue), var(--gold));
+}
+
+.identity-card:hover {
+    transform: translateY(-9px);
+    box-shadow: 0 18px 40px #0756a525;
+}
+
+.identity-icon {
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.identity-card h3 {
+    color: var(--blue);
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.identity-card p {
+    color: var(--muted);
+    font-size: 15px;
+}
+
+/* =========================
+   SERVICES
+========================= */
 
 .services-grid {
     display: grid;
@@ -260,8 +428,8 @@ section {
 .service-card {
     position: relative;
     overflow: hidden;
-    padding: 35px 25px;
-    border-radius: 25px;
+    padding: 38px 25px;
+    border-radius: 27px;
     text-align: center;
     background: white;
     border: 1px solid #dceaf6;
@@ -281,21 +449,21 @@ section {
 
 .service-card:hover {
     transform: translateY(-12px);
-    box-shadow: 0 15px 35px #0878bd30;
+    box-shadow: 0 18px 40px #0878bd30;
 }
 
 .service-icon {
-    width: 95px;
-    height: 95px;
-    margin: 0 auto 20px;
-    border-radius: 25px;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 22px;
+    border-radius: 28px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 45px;
+    font-size: 47px;
     background: linear-gradient(135deg, #dff8ff, #e8edff);
     box-shadow: 0 0 25px #12c5d833;
-    animation: float 3s ease-in-out infinite;
+    animation: float 3.5s ease-in-out infinite;
 }
 
 .service-card:nth-child(2) .service-icon {
@@ -312,89 +480,121 @@ section {
 
 .service-card h3 {
     color: #0756a5;
-    font-size: 23px;
+    font-size: 22px;
     margin-bottom: 12px;
 }
 
 .service-card p {
     color: var(--muted);
     font-size: 16px;
+    line-height: 2;
 }
 
-/* VALUES */
+/* =========================
+   VALUES
+========================= */
 
 .values-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    gap: 22px;
 }
 
 .value-card {
-    padding: 30px 20px;
+    padding: 35px 23px;
     text-align: center;
-    border-radius: 22px;
+    border-radius: 25px;
     background: linear-gradient(135deg, #0756a5, #0c91b1);
     color: white;
     box-shadow: 0 10px 25px #0756a530;
-    transition: 0.3s;
+    transition: 0.35s;
+    position: relative;
+    overflow: hidden;
+}
+
+.value-card::before {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border: 1px solid #ffffff25;
+    border-radius: 50%;
+    top: -65px;
+    left: -40px;
 }
 
 .value-card:hover {
-    transform: scale(1.04);
-    box-shadow: 0 0 25px #11c5d877;
+    transform: translateY(-8px);
+    box-shadow: 0 0 30px #11c5d877;
 }
 
 .value-card h3 {
     color: #ffdc91;
+    font-size: 22px;
     margin-bottom: 10px;
 }
 
-/* CONTACT */
+.value-card p {
+    font-size: 15px;
+}
+
+/* =========================
+   CONTACT
+========================= */
 
 .contact-section {
-    background: linear-gradient(135deg, #071b36, #0756a5);
+    background:
+        radial-gradient(circle at 15% 80%, #11c5d833, transparent 35%),
+        linear-gradient(135deg, #071b36, #0756a5);
     color: white;
     max-width: 100%;
     text-align: center;
-    padding: 80px 20px;
+    padding: 90px 20px;
+    position: relative;
+    overflow: hidden;
 }
 
 .contact-section h2 {
-    font-size: 34px;
+    font-size: 36px;
     color: white;
     margin-bottom: 15px;
 }
 
 .contact-section p {
     color: #dceeff;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
+    font-size: 17px;
 }
 
 .contact-buttons {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    gap: 16px;
 }
 
 .contact-button {
-    display: inline-block;
-    padding: 14px 25px;
-    border-radius: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 28px;
+    border-radius: 45px;
     color: white;
-    font-weight: 800;
+    font-weight: 900;
     transition: 0.3s;
     border: 1px solid #ffffff55;
+    background: #ffffff12;
 }
 
 .contact-button:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px #ffffff55;
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px #ffffff55;
 }
 
 .whatsapp {
     background: linear-gradient(135deg, #00bd75, #00e08c);
     border: none;
+    color: #063d2a;
 }
 
 .instagram {
@@ -402,32 +602,53 @@ section {
     border: none;
 }
 
-/* FOOTER */
+/* =========================
+   FLOATING WHATSAPP
+========================= */
+
+.floating-whatsapp {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    z-index: 999;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #08c779;
+    color: white;
+    font-size: 30px;
+    box-shadow: 0 5px 25px #00bd7580;
+    transition: 0.3s;
+    animation: whatsappPulse 2s infinite;
+}
+
+.floating-whatsapp:hover {
+    transform: scale(1.12);
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
     background: #041326;
     color: #c7d8e9;
     text-align: center;
-    padding: 25px 15px;
+    padding: 30px 15px;
     font-size: 14px;
+    line-height: 2;
 }
 
-/* ANIMATIONS */
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-9px); }
+footer strong {
+    color: var(--cyan);
 }
 
-@keyframes buttonGlow {
-    from { box-shadow: 0 0 12px #ffc86b77; }
-    to { box-shadow: 0 0 30px #ffc86bbb, 0 0 50px #ffc86b55; }
-}
-
-@keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
+/* =========================
+   REVEAL ANIMATION
+========================= */
 
 .reveal {
     opacity: 0;
@@ -440,39 +661,178 @@ footer {
     transform: translateY(0);
 }
 
-/* MOBILE */
+/* =========================
+   ANIMATIONS
+========================= */
 
-@media(max-width: 700px) {
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-9px); }
+}
+
+@keyframes buttonGlow {
+    from {
+        box-shadow: 0 0 12px #ffc86b77;
+    }
+    to {
+        box-shadow: 0 0 30px #ffc86bbb, 0 0 50px #ffc86b55;
+    }
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes lightMove {
+    from { transform: translate(0, 0); }
+    to { transform: translate(60px, -30px); }
+}
+
+@keyframes heroAppear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes whatsappPulse {
+    0%, 100% {
+        box-shadow: 0 5px 25px #00bd7580;
+    }
+    50% {
+        box-shadow: 0 5px 35px #00bd75cc, 0 0 0 9px #00bd7520;
+    }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width: 1050px) {
     header {
-        justify-content: center;
-        text-align: center;
-        padding: 18px 12px;
+        padding: 15px 3%;
     }
 
-    .brand {
-        flex-direction: column;
+    .logos img {
+        width: 76px;
+        height: 76px;
     }
 
     .brand h2 {
         font-size: 16px;
     }
 
-    nav {
+    nav a {
+        padding: 9px 10px;
+        font-size: 13px;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width: 800px) {
+
+    header {
+        padding: 12px 16px;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .brand {
+        gap: 10px;
+        flex: 1;
+    }
+
+    .logos {
+        gap: 7px;
+    }
+
+    .logos img {
+        width: 70px;
+        height: 70px;
+        border-radius: 15px;
+        padding: 4px;
+    }
+
+    .brand h2 {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .brand p {
+        font-size: 11px;
+        line-height: 1.7;
+    }
+
+    .menu-toggle {
+        display: flex;
+        align-items: center;
         justify-content: center;
+        flex-shrink: 0;
+    }
+
+    nav {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        background: #071b36;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        padding: 0 20px;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+        box-shadow: 0 15px 25px #00152c35;
+    }
+
+    nav.open {
+        max-height: 400px;
+        opacity: 1;
+        visibility: visible;
+        padding: 15px 20px 22px;
     }
 
     nav a {
-        font-size: 13px;
-        padding: 7px 9px;
+        width: 100%;
+        padding: 12px 15px;
+        text-align: right;
+        border-bottom: 1px solid #ffffff12;
+        font-size: 15px;
     }
 
     .hero {
-        min-height: 570px;
+        min-height: 590px;
         padding: 75px 20px;
+    }
+
+    .hero h1 {
+        font-size: clamp(36px, 9vw, 52px);
     }
 
     .hero p {
         font-size: 16px;
+    }
+
+    .badge {
+        font-size: 14px;
+    }
+
+    .glow-button,
+    .outline-button {
+        padding: 13px 25px;
+        font-size: 14px;
     }
 
     section {
@@ -480,58 +840,146 @@ footer {
     }
 
     .section-title h2 {
-        font-size: 28px;
+        font-size: 29px;
     }
 
     .about-box {
-        padding: 25px;
-        font-size: 17px;
+        padding: 30px 25px;
+        font-size: 16px;
+    }
+
+    .identity-grid {
+        grid-template-columns: 1fr;
     }
 
     .contact-section h2 {
-        font-size: 28px;
+        font-size: 29px;
     }
 }
 
+/* SMALL MOBILE */
+
+@media(max-width: 390px) {
+
+    .logos img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .brand h2 {
+        font-size: 12px;
+    }
+
+    .brand p {
+        font-size: 10px;
+    }
+
+    .menu-toggle {
+        width: 42px;
+        height: 42px;
+        font-size: 24px;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .glow-button,
+    .outline-button {
+        width: 85%;
+    }
+}
+
+/* REDUCED MOTION */
+
 @media(prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
         animation: none !important;
         scroll-behavior: auto !important;
         transition: none !important;
     }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
 }
+
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header>
+
     <div class="brand">
+
         <div class="logos">
-            <img src="./center-logo.jpeg" alt="شعار مركز الوفاء">
-            <img src="./ministry-logo.jpeg" alt="شعار الجهة المشرفة">
+
+            <img src="./center-logo.jpeg"
+                 alt="شعار مركز الوفاء">
+
+            <img src="./ministry-logo.jpeg"
+                 alt="شعار وزارة التنمية الاجتماعية">
+
         </div>
 
         <div>
             <h2>مركز الوفاء لتأهيل الأشخاص ذوي الإعاقة</h2>
             <p>ولاية شليم وجزر الحلانيات | محافظة ظفار</p>
         </div>
+
     </div>
 
-    <nav>
+    <button class="menu-toggle"
+            id="menuToggle"
+            aria-label="فتح القائمة"
+            aria-expanded="false"
+            aria-controls="mainNav">
+        ☰
+    </button>
+
+    <nav id="mainNav">
+
         <a href="#home">الرئيسية</a>
+
         <a href="#about">عن المركز</a>
+
+        <a href="#identity">رسالتنا وأهدافنا</a>
+
         <a href="#services">خدماتنا</a>
+
         <a href="#values">قيمنا</a>
+
         <a href="#contact">تواصل معنا</a>
+
     </nav>
+
 </header>
+
 
 <main>
 
+<!-- HERO SECTION -->
+
 <div class="hero" id="home">
+
+    <div class="hero-light"></div>
+
     <div class="hero-content">
-        <div class="badge">سلطنة عمان | محافظة ظفار</div>
+
+        <div class="badge">
+            سلطنة عمان | محافظة ظفار
+        </div>
 
         <h1>
             مركز الوفاء
@@ -544,156 +992,432 @@ footer {
             للأشخاص ذوي الإعاقة.
         </p>
 
-        <a href="#about" class="glow-button">اكتشف المركز ←</a>
+        <div class="hero-buttons">
+
+            <a href="#about" class="glow-button">
+                اكتشف المركز ←
+            </a>
+
+            <a href="#contact" class="outline-button">
+                تواصل معنا
+            </a>
+
+        </div>
+
     </div>
+
 </div>
 
+
+<!-- ABOUT -->
+
 <section id="about" class="reveal">
+
     <div class="section-title">
+
         <span>من نحن</span>
+
         <h2>عن المركز</h2>
-        <p>رسالتنا هي دعم القدرات وتعزيز المشاركة المجتمعية</p>
+
+        <p>
+            رسالتنا هي دعم القدرات وتعزيز المشاركة المجتمعية
+        </p>
+
     </div>
 
     <div class="about-box">
+
         مركز الوفاء لتأهيل الأشخاص ذوي الإعاقة بولاية شليم
         وجزر الحلانيات، بمحافظة ظفار في سلطنة عمان،
         يعمل على دعم الأشخاص ذوي الإعاقة من خلال خدمات
         الرعاية والتأهيل وتنمية المهارات، بما يسهم في تعزيز
         قدراتهم واستقلاليتهم وتحسين مشاركتهم في المجتمع.
+
     </div>
+
 </section>
 
-<section id="services" class="reveal">
+
+<!-- MISSION / VISION / GOALS -->
+
+<section id="identity" class="reveal">
+
     <div class="section-title">
-        <span>ما نقدمه</span>
-        <h2>خدمات المركز</h2>
-        <p>خدمات تأهيلية وتنموية لدعم الأفراد وأسرهم</p>
+
+        <span>هويتنا المؤسسية</span>
+
+        <h2>رسالتنا ورؤيتنا وأهدافنا</h2>
+
+        <p>
+            نعمل من أجل بيئة داعمة تضع الإنسان وقدراته في المقدمة
+        </p>
+
     </div>
+
+    <div class="identity-grid">
+
+        <div class="identity-card">
+
+            <div class="identity-icon">🎯</div>
+
+            <h3>رسالتنا</h3>
+
+            <p>
+                تقديم بيئة داعمة تسهم في تنمية قدرات الأشخاص
+                ذوي الإعاقة وتعزيز استقلاليتهم ومشاركتهم المجتمعية.
+            </p>
+
+        </div>
+
+
+        <div class="identity-card">
+
+            <div class="identity-icon">🌟</div>
+
+            <h3>رؤيتنا</h3>
+
+            <p>
+                مجتمع أكثر شمولاً وتمكيناً، تتاح فيه الفرص
+                للأشخاص ذوي الإعاقة للمشاركة وتحقيق إمكاناتهم.
+            </p>
+
+        </div>
+
+
+        <div class="identity-card">
+
+            <div class="identity-icon">🚀</div>
+
+            <h3>أهدافنا</h3>
+
+            <p>
+                دعم المهارات الفردية، وتعزيز الاستقلالية،
+                وتطوير فرص التواصل والتفاعل والمشاركة المجتمعية.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section id="services" class="reveal">
+
+    <div class="section-title">
+
+        <span>ما نقدمه</span>
+
+        <h2>خدمات المركز</h2>
+
+        <p>
+            خدمات تأهيلية وتنموية لدعم الأفراد وأسرهم
+        </p>
+
+    </div>
+
 
     <div class="services-grid">
 
+
         <div class="service-card">
+
             <div class="service-icon">🧩</div>
+
             <h3>التربية الخاصة / التوحد</h3>
+
             <p>
                 دعم التعلم وتنمية المهارات والتواصل
                 والسلوك والقدرات الفردية.
             </p>
+
         </div>
 
+
         <div class="service-card">
+
             <div class="service-icon">🏃</div>
+
             <h3>العلاج الطبيعي</h3>
+
             <p>
                 دعم الحركة والقدرات البدنية وتحسين
                 التوازن والمهارات الحركية.
             </p>
+
         </div>
 
+
         <div class="service-card">
+
             <div class="service-icon">💬</div>
+
             <h3>علاج النطق واللغة</h3>
+
             <p>
                 دعم مهارات التواصل واللغة والتعبير
                 والتفاعل.
             </p>
+
         </div>
 
+
         <div class="service-card">
+
             <div class="service-icon">🤲</div>
+
             <h3>العلاج الوظيفي</h3>
+
             <p>
                 تنمية المهارات الحسية والحركية
                 ومهارات الحياة اليومية.
             </p>
+
         </div>
 
+
     </div>
+
 </section>
+
+
+<!-- VALUES -->
 
 <section id="values" class="reveal">
+
     <div class="section-title">
+
         <span>ما نؤمن به</span>
+
         <h2>قيمنا وأهدافنا</h2>
-        <p>نحو بيئة أكثر شمولاً وتمكيناً</p>
+
+        <p>
+            نحو بيئة أكثر شمولاً وتمكيناً
+        </p>
+
     </div>
+
 
     <div class="values-grid">
+
+
         <div class="value-card">
+
             <h3>التمكين</h3>
-            <p>تعزيز قدرات الأشخاص ذوي الإعاقة ودعم استقلاليتهم.</p>
+
+            <p>
+                تعزيز قدرات الأشخاص ذوي الإعاقة
+                ودعم استقلاليتهم.
+            </p>
+
         </div>
 
+
         <div class="value-card">
+
             <h3>الاحترام</h3>
-            <p>تقدير الفروق الفردية واحترام كرامة كل فرد.</p>
+
+            <p>
+                تقدير الفروق الفردية واحترام
+                كرامة كل فرد.
+            </p>
+
         </div>
 
+
         <div class="value-card">
+
             <h3>الشمول</h3>
-            <p>تعزيز فرص المشاركة والتفاعل داخل المجتمع.</p>
+
+            <p>
+                تعزيز فرص المشاركة والتفاعل
+                داخل المجتمع.
+            </p>
+
         </div>
 
+
         <div class="value-card">
+
             <h3>التعاون</h3>
-            <p>العمل مع الأسر والمجتمع لدعم مسيرة التأهيل.</p>
+
+            <p>
+                العمل مع الأسر والمجتمع
+                لدعم مسيرة التأهيل.
+            </p>
+
         </div>
+
+
     </div>
+
 </section>
 
+
+<!-- CONTACT -->
+
 <div class="contact-section" id="contact">
+
     <h2>نسعد بتواصلكم معنا</h2>
+
     <p>
         للاستفسارات والتواصل مع مركز الوفاء
         لتأهيل الأشخاص ذوي الإعاقة
     </p>
 
+
     <div class="contact-buttons">
+
 
         <a class="contact-button whatsapp"
            href="https://wa.me/96823388904"
            target="_blank"
-           rel="noopener">
+           rel="noopener noreferrer">
+
             واتساب المركز | +968 2338 8904
+
         </a>
+
 
         <a class="contact-button instagram"
            href="https://www.instagram.com/alwafaa.shaleem/"
            target="_blank"
-           rel="noopener">
+           rel="noopener noreferrer">
+
             تابعونا على إنستجرام
+
         </a>
+
 
         <a class="contact-button"
            href="tel:+96823388904">
+
             اتصل بنا
+
         </a>
 
+
     </div>
+
 </div>
 
 </main>
 
+
+<!-- FLOATING WHATSAPP -->
+
+<a class="floating-whatsapp"
+   href="https://wa.me/96823388904"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="تواصل معنا عبر واتساب">
+
+    ☎
+
+</a>
+
+
+<!-- FOOTER -->
+
 <footer>
+
     جميع الحقوق محفوظة © مركز الوفاء لتأهيل الأشخاص ذوي الإعاقة
+
     <br>
+
     ولاية شليم وجزر الحلانيات - محافظة ظفار - سلطنة عمان
+
+    <br>
+
+    <strong>نحو مستقبل أكثر تمكيناً</strong>
+
 </footer>
 
+
+<!-- JAVASCRIPT -->
+
 <script>
-const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-            revealObserver.unobserve(entry.target);
-        }
+
+// MOBILE MENU
+
+const menuToggle = document.getElementById('menuToggle');
+const mainNav = document.getElementById('mainNav');
+
+menuToggle.addEventListener('click', function() {
+
+    const isOpen = mainNav.classList.toggle('open');
+
+    menuToggle.setAttribute('aria-expanded', isOpen);
+
+    menuToggle.innerHTML = isOpen ? '✕' : '☰';
+
+});
+
+
+// CLOSE MENU AFTER CLICKING A LINK
+
+document.querySelectorAll('#mainNav a').forEach(link => {
+
+    link.addEventListener('click', function() {
+
+        mainNav.classList.remove('open');
+
+        menuToggle.setAttribute('aria-expanded', 'false');
+
+        menuToggle.innerHTML = '☰';
+
     });
+
+});
+
+
+// REVEAL ELEMENTS ON SCROLL
+
+const revealObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add('show');
+
+            revealObserver.unobserve(entry.target);
+
+        }
+
+    });
+
 }, { threshold: 0.12 });
 
+
 document.querySelectorAll('.reveal').forEach(element => {
+
     revealObserver.observe(element);
+
 });
+
+
+// CLOSE MENU WHEN CLICKING OUTSIDE
+
+document.addEventListener('click', function(event) {
+
+    if (
+        !mainNav.contains(event.target) &&
+        !menuToggle.contains(event.target)
+    ) {
+
+        mainNav.classList.remove('open');
+
+        menuToggle.setAttribute('aria-expanded', 'false');
+
+        menuToggle.innerHTML = '☰';
+
+    }
+
+});
+
 </script>
 
 </body>
