@@ -160,7 +160,7 @@ header {
 
 .header-content {
 
-    min-height: 125px;
+    min-height: 135px;
 
     display: flex;
 
@@ -178,7 +178,7 @@ header {
 
     align-items: center;
 
-    gap: 13px;
+    gap: 15px;
 
     flex-shrink: 0;
 
@@ -204,27 +204,29 @@ header {
 
 .logo-text {
 
-    max-width: 270px;
+    max-width: 340px;
 
 }
 
 .logo-text h1 {
 
-    font-size: 17px;
+    font-size: 21px;
 
     font-weight: 900;
 
     color: white;
 
-    line-height: 1.7;
+    line-height: 1.65;
 
 }
 
 .logo-text p {
 
-    font-size: 12px;
+    font-size: 15px;
 
     color: #c8eafa;
+
+    line-height: 1.8;
 
 }
 
@@ -274,7 +276,7 @@ nav a:hover {
 
 }
 
-/* HOME PAGE - NEW DESIGN */
+/* HOME PAGE - DARKER DESIGN */
 
 .hero {
 
@@ -282,13 +284,27 @@ nav a:hover {
 
     overflow: hidden;
 
-    min-height: 730px;
+    min-height: 760px;
 
     background:
 
-        radial-gradient(ellipse at 50% 42%, rgba(255,255,255,.98) 0%, rgba(239,251,255,.95) 34%, transparent 72%),
+        radial-gradient(ellipse at 48% 42%,
 
-        linear-gradient(145deg, #7edbe5 0%, #c7f0ff 35%, #effaff 68%, #8bdce9 100%);
+            rgba(30,145,165,.52) 0%,
+
+            rgba(12,105,137,.30) 34%,
+
+            transparent 72%),
+
+        linear-gradient(145deg,
+
+            #07516c 0%,
+
+            #087d98 32%,
+
+            #07516e 68%,
+
+            #073653 100%);
 
     display: flex;
 
@@ -296,13 +312,13 @@ nav a:hover {
 
     justify-content: center;
 
-    padding: 95px 0 170px;
+    padding: 95px 0 190px;
 
     isolation: isolate;
 
 }
 
-/* Soft decorative light */
+/* Dark decorative shapes - no dots */
 
 .hero::before {
 
@@ -310,19 +326,27 @@ nav a:hover {
 
     position: absolute;
 
-    width: 430px;
+    width: 550px;
 
-    height: 430px;
+    height: 550px;
 
-    top: -210px;
+    top: -280px;
 
-    left: -130px;
+    left: -170px;
 
     border-radius: 50%;
 
-    background: linear-gradient(135deg, rgba(19,170,169,.65), rgba(8,126,174,.03));
+    border: 2px solid rgba(121,226,230,.13);
 
-    filter: blur(2px);
+    background: radial-gradient(
+
+        circle,
+
+        rgba(19,170,169,.17),
+
+        rgba(7,54,83,.04) 70%
+
+    );
 
     z-index: -1;
 
@@ -334,19 +358,27 @@ nav a:hover {
 
     position: absolute;
 
-    width: 210px;
+    width: 460px;
 
-    height: 210px;
+    height: 460px;
 
-    right: 4%;
+    bottom: 80px;
 
-    top: 55px;
+    right: -220px;
 
-    opacity: .55;
+    border-radius: 50%;
 
-    background-image: radial-gradient(#36bde1 3px, transparent 3px);
+    border: 2px solid rgba(153,231,239,.13);
 
-    background-size: 28px 28px;
+    background: radial-gradient(
+
+        circle,
+
+        rgba(19,170,169,.12),
+
+        transparent 70%
+
+    );
 
     z-index: -1;
 
@@ -376,23 +408,23 @@ nav a:hover {
 
     gap: 10px;
 
-    background: rgba(255,255,255,.83);
+    background: rgba(238,250,255,.95);
 
     color: var(--navy);
 
-    padding: 10px 25px;
+    padding: 11px 27px;
 
-    border: 1px solid rgba(255,255,255,.95);
+    border: 1px solid rgba(255,255,255,.9);
 
     border-radius: 50px;
 
-    font-size: 17px;
+    font-size: 18px;
 
     font-weight: 900;
 
-    margin-bottom: 32px;
+    margin-bottom: 35px;
 
-    box-shadow: 0 8px 25px rgba(7,54,83,.08);
+    box-shadow: 0 8px 25px rgba(0,0,0,.15);
 
 }
 
@@ -400,17 +432,17 @@ nav a:hover {
 
     content: "✦";
 
-    color: var(--gold);
+    color: #f2ae25;
 
-    font-size: 24px;
+    font-size: 25px;
 
 }
 
 .hero h2 {
 
-    color: var(--navy);
+    color: #ffffff;
 
-    font-size: 66px;
+    font-size: 68px;
 
     font-weight: 900;
 
@@ -418,17 +450,17 @@ nav a:hover {
 
     margin-bottom: 4px;
 
-    text-shadow: 0 3px 15px rgba(7,54,83,.05);
+    text-shadow: 0 5px 20px rgba(0,0,0,.25);
 
 }
 
 .hero h2 span {
 
-    color: #079eaa;
+    color: #55e0df;
 
     display: block;
 
-    font-size: 57px;
+    font-size: 58px;
 
     position: relative;
 
@@ -436,7 +468,9 @@ nav a:hover {
 
     max-width: 100%;
 
-    margin: 0 auto 28px;
+    margin: 0 auto 30px;
+
+    text-shadow: 0 4px 15px rgba(0,0,0,.12);
 
 }
 
@@ -450,11 +484,25 @@ nav a:hover {
 
     width: 85%;
 
-    bottom: -7px;
+    bottom: -8px;
 
     right: 7%;
 
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    background: linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        #f3bd58,
+
+        #ffe09a,
+
+        #f3bd58,
+
+        transparent
+
+    );
 
     border-radius: 50%;
 
@@ -466,13 +514,15 @@ nav a:hover {
 
     font-size: 20px;
 
-    color: #31566b;
+    color: #e7f8ff;
 
     max-width: 850px;
 
-    margin: 0 auto 38px;
+    margin: 0 auto 40px;
 
     line-height: 2;
+
+    text-shadow: 0 2px 8px rgba(0,0,0,.15);
 
 }
 
@@ -488,7 +538,7 @@ nav a:hover {
 
     background: linear-gradient(135deg, #ffd36f, #f2ae25);
 
-    color: var(--navy);
+    color: #073653;
 
     padding: 17px 43px;
 
@@ -498,9 +548,9 @@ nav a:hover {
 
     font-weight: 900;
 
-    border: 2px solid rgba(255,255,255,.9);
+    border: 3px solid rgba(255,255,255,.9);
 
-    box-shadow: 0 13px 28px rgba(219,158,34,.28);
+    box-shadow: 0 13px 28px rgba(0,0,0,.22);
 
     transition: .35s;
 
@@ -522,7 +572,7 @@ nav a:hover {
 
     transform: translateY(-6px);
 
-    box-shadow: 0 17px 35px rgba(219,158,34,.4);
+    box-shadow: 0 17px 35px rgba(0,0,0,.28);
 
     background: linear-gradient(135deg, #ffe29a, #f5b52e);
 
@@ -1388,6 +1438,24 @@ footer .designer {
 
     }
 
+    .logo-text {
+
+        max-width: 330px;
+
+    }
+
+    .logo-text h1 {
+
+        font-size: 20px;
+
+    }
+
+    .logo-text p {
+
+        font-size: 14px;
+
+    }
+
     .hero h2 {
 
         font-size: 52px;
@@ -1406,7 +1474,7 @@ footer .designer {
 
     .header-content {
 
-        min-height: 100px;
+        min-height: 112px;
 
         flex-wrap: nowrap;
 
@@ -1414,15 +1482,15 @@ footer .designer {
 
     .logo-area {
 
-        gap: 8px;
+        gap: 7px;
 
     }
 
     .logo-area img {
 
-        width: 68px;
+        width: 66px;
 
-        height: 68px;
+        height: 66px;
 
         border-radius: 12px;
 
@@ -1432,27 +1500,31 @@ footer .designer {
 
     .logo-text {
 
-        max-width: 155px;
+        max-width: 180px;
 
     }
 
     .logo-text h1 {
 
-        font-size: 11px;
+        font-size: 13px;
 
-        line-height: 1.5;
+        line-height: 1.55;
 
     }
 
     .logo-text p {
 
-        font-size: 9px;
+        font-size: 10px;
+
+        line-height: 1.6;
 
     }
 
     .menu-btn {
 
         display: block;
+
+        flex-shrink: 0;
 
     }
 
@@ -1632,21 +1704,27 @@ footer .designer {
 
     .logo-area img {
 
-        width: 58px;
+        width: 54px;
 
-        height: 58px;
+        height: 54px;
 
     }
 
     .logo-text {
 
-        max-width: 125px;
+        max-width: 145px;
 
     }
 
     .logo-text h1 {
 
-        font-size: 10px;
+        font-size: 11px;
+
+    }
+
+    .logo-text p {
+
+        font-size: 9px;
 
     }
 
@@ -1688,7 +1766,7 @@ footer .designer {
 
 }
 
-/* REDUCE MOTION FOR ACCESSIBILITY */
+/* ACCESSIBILITY */
 
 @media(prefers-reduced-motion: reduce) {
 
@@ -1818,19 +1896,21 @@ footer .designer {
 
     <div class="hero-waves" aria-hidden="true">
 
-        <svg viewBox="0 0 1440 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 1440 300" preserveAspectRatio="none"
+
+             xmlns="http://www.w3.org/2000/svg">
 
             <path d="M0 100 C260 30 430 270 730 225 C1010 185 1190 30 1440 95 L1440 300 L0 300 Z"
 
-                  fill="#d7f5ff"/>
+                  fill="#0b607a"/>
 
             <path d="M0 145 C250 70 460 280 760 240 C1040 200 1240 70 1440 115 L1440 300 L0 300 Z"
 
-                  fill="#0aa8b4"/>
+                  fill="#087e98"/>
 
             <path d="M0 175 C270 95 470 290 770 255 C1070 220 1230 110 1440 145 L1440 300 L0 300 Z"
 
-                  fill="#087eae"/>
+                  fill="#07516e"/>
 
             <path d="M0 190 C260 130 470 300 780 270 C1060 240 1240 155 1440 175"
 
@@ -1842,7 +1922,7 @@ footer .designer {
 
             <path d="M0 215 C270 160 460 310 790 285 C1100 255 1260 185 1440 205 L1440 300 L0 300 Z"
 
-                  fill="#073653"/>
+                  fill="#052f49"/>
 
         </svg>
 
@@ -2332,8 +2412,6 @@ footer .designer {
 
             <div class="contact-buttons">
 
-                <!-- INSTAGRAM -->
-
                 <a class="contact-btn instagram"
 
                    href="https://www.instagram.com/alwafaa.shaleem/"
@@ -2374,8 +2452,6 @@ footer .designer {
 
                 </a>
 
-                <!-- WHATSAPP -->
-
                 <a class="contact-btn whatsapp"
 
                    href="https://wa.me/96823388904"
@@ -2409,8 +2485,6 @@ footer .designer {
                     <span>واتساب</span>
 
                 </a>
-
-                <!-- PHONE -->
 
                 <a class="contact-btn phone"
 
