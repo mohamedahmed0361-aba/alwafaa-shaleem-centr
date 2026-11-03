@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مركز الوفاء - شليم وجزر الحلانيات</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Tahoma, Arial, sans-serif;
+    background: #f5f9fc;
+    color: #183451;
+    line-height: 1.9;
+}
+
+header {
+    background: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    box-shadow: 0 2px 12px #0001;
+}
+
+.logos {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logos img {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+}
+
+header h2 {
+    color: #0756a5;
+    font-size: 19px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #183451;
+    margin: 8px;
+    font-weight: bold;
+}
+
+.hero {
+    text-align: center;
+    padding: 75px 20px;
+    background: linear-gradient(135deg,#0756a5,#13b9ca);
+    color: white;
+}
+
+.hero h1 {
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 19px;
+}
+
+.button {
+    display: inline-block;
+    background: white;
+    color: #0756a5;
+    padding: 12px 28px;
+    margin-top: 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section {
+    padding: 55px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+section h2 {
+    text-align: center;
+    color: #0756a5;
+    margin-bottom: 30px;
+}
+
+.about {
+    text-align: center;
+    font-size: 18px;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 3px 15px #0001;
+}
+
+.card h3 {
+    color: #078da9;
+    margin-bottom: 10px;
+}
+
+footer {
+    background: #073d70;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+@media(max-width:600px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    nav {
+        text-align: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logos">
+        <img src="center-logo.png" alt="شعار مركز الوفاء">
+        <img src="oman-logo.png" alt="شعار سلطنة عمان">
+        <h2>مركز الوفاء لتأهيل الأشخاص ذوي الإعاقة</h2>
+    </div>
+
+    <nav>
+        <a href="#home">الرئيسية</a>
+        <a href="#about">عن المركز</a>
+        <a href="#services">الخدمات</a>
+        <a href="#contact">تواصل معنا</a>
+    </nav>
+</header>
+
+<div class="hero" id="home">
+    <h1>مرحباً بكم في مركز الوفاء</h1>
+    <p>معاً نحو التأهيل والتمكين والاستقلالية</p>
+    <a href="#about" class="button">اكتشف المركز</a>
+</div>
+
+<section id="about">
+    <h2>عن المركز</h2>
+    <div class="about">
+        مركز الوفاء لتأهيل الأشخاص ذوي الإعاقة بولاية شليم وجزر الحلانيات،
+        محافظة ظفار، سلطنة عمان.
+        <br>
+        نسعى إلى تقديم خدمات التأهيل والرعاية وتنمية المهارات
+        وتعزيز استقلالية الأشخاص ذوي الإعاقة.
+    </div>
+</section>
+
+<section id="services">
+    <h2>خدمات المركز</h2>
+
+    <div class="services">
+
+        <div class="card">
+            <h3>التأهيل السلوكي</h3>
+            <p>تنمية المهارات السلوكية والتواصلية والاجتماعية.</p>
+        </div>
+
+        <div class="card">
+            <h3>العلاج الوظيفي</h3>
+            <p>تنمية المهارات الحركية والحسية ومهارات الحياة اليومية.</p>
+        </div>
+
+        <div class="card">
+            <h3>علاج النطق واللغة</h3>
+            <p>تطوير مهارات التواصل واللغة والتعبير.</p>
+        </div>
+
+        <div class="card">
+            <h3>تنمية المهارات</h3>
+            <p>تطوير القدرات المعرفية والاستقلالية والاجتماعية.</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="contact">
+    <h2>تواصل معنا</h2>
+    <p style="text-align:center">
+        مركز الوفاء لتأهيل الأشخاص ذوي الإعاقة
+        <br>
+        ولاية شليم وجزر الحلانيات - محافظة ظفار - سلطنة عمان
+    </p>
+</section>
+
+<footer>
+    جميع الحقوق محفوظة © مركز الوفاء
+    <br>
+    سلطنة عمان
+</footer>
+
+</body>
+</html>
