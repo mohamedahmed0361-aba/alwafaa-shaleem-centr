@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 
 <html lang="ar" dir="rtl">
@@ -8,7 +10,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="theme-color" content="#bceeff">
+<meta name="theme-color" content="#073653">
 
 <title>مركز الوفاء لتأهيل الأشخاص ذوي الإعاقة</title>
 
@@ -272,7 +274,7 @@ nav a:hover {
 
 }
 
-/* HERO */
+/* HOME PAGE - NEW DESIGN */
 
 .hero {
 
@@ -280,9 +282,13 @@ nav a:hover {
 
     overflow: hidden;
 
-    min-height: 530px;
+    min-height: 730px;
 
-    background: linear-gradient(130deg, #bdeeff 0%, #d9f5ff 48%, #a4e1f5 100%);
+    background:
+
+        radial-gradient(ellipse at 50% 42%, rgba(255,255,255,.98) 0%, rgba(239,251,255,.95) 34%, transparent 72%),
+
+        linear-gradient(145deg, #7edbe5 0%, #c7f0ff 35%, #effaff 68%, #8bdce9 100%);
 
     display: flex;
 
@@ -290,9 +296,13 @@ nav a:hover {
 
     justify-content: center;
 
-    padding: 75px 0;
+    padding: 95px 0 170px;
+
+    isolation: isolate;
 
 }
+
+/* Soft decorative light */
 
 .hero::before {
 
@@ -300,17 +310,21 @@ nav a:hover {
 
     position: absolute;
 
-    width: 500px;
+    width: 430px;
 
-    height: 500px;
+    height: 430px;
 
-    border: 2px solid rgba(8,126,174,.12);
+    top: -210px;
+
+    left: -130px;
 
     border-radius: 50%;
 
-    top: -240px;
+    background: linear-gradient(135deg, rgba(19,170,169,.65), rgba(8,126,174,.03));
 
-    right: -130px;
+    filter: blur(2px);
+
+    z-index: -1;
 
 }
 
@@ -320,17 +334,21 @@ nav a:hover {
 
     position: absolute;
 
-    width: 350px;
+    width: 210px;
 
-    height: 350px;
+    height: 210px;
 
-    border: 2px solid rgba(8,126,174,.12);
+    right: 4%;
 
-    border-radius: 50%;
+    top: 55px;
 
-    bottom: -180px;
+    opacity: .55;
 
-    left: -90px;
+    background-image: radial-gradient(#36bde1 3px, transparent 3px);
+
+    background-size: 28px 28px;
+
+    z-index: -1;
 
 }
 
@@ -338,11 +356,11 @@ nav a:hover {
 
     position: relative;
 
-    z-index: 2;
+    z-index: 3;
 
     text-align: center;
 
-    max-width: 900px;
+    max-width: 950px;
 
     margin: auto;
 
@@ -350,21 +368,41 @@ nav a:hover {
 
 .hero-label {
 
-    display: inline-block;
+    display: inline-flex;
 
-    background: rgba(255,255,255,.7);
+    align-items: center;
 
-    color: var(--blue);
+    justify-content: center;
 
-    padding: 7px 18px;
+    gap: 10px;
 
-    border-radius: 30px;
+    background: rgba(255,255,255,.83);
 
-    font-size: 13px;
+    color: var(--navy);
 
-    font-weight: 800;
+    padding: 10px 25px;
 
-    margin-bottom: 20px;
+    border: 1px solid rgba(255,255,255,.95);
+
+    border-radius: 50px;
+
+    font-size: 17px;
+
+    font-weight: 900;
+
+    margin-bottom: 32px;
+
+    box-shadow: 0 8px 25px rgba(7,54,83,.08);
+
+}
+
+.hero-label::after {
+
+    content: "✦";
+
+    color: var(--gold);
+
+    font-size: 24px;
 
 }
 
@@ -372,61 +410,151 @@ nav a:hover {
 
     color: var(--navy);
 
-    font-size: 46px;
+    font-size: 66px;
 
     font-weight: 900;
 
-    line-height: 1.5;
+    line-height: 1.4;
 
-    margin-bottom: 18px;
+    margin-bottom: 4px;
+
+    text-shadow: 0 3px 15px rgba(7,54,83,.05);
 
 }
 
 .hero h2 span {
 
-    color: #0786b5;
+    color: #079eaa;
 
     display: block;
 
-}
+    font-size: 57px;
 
-.hero-content > p {
+    position: relative;
 
-    font-size: 17px;
+    width: fit-content;
 
-    color: #31566b;
-
-    max-width: 800px;
+    max-width: 100%;
 
     margin: 0 auto 28px;
 
 }
 
+.hero h2 span::after {
+
+    content: "";
+
+    position: absolute;
+
+    height: 8px;
+
+    width: 85%;
+
+    bottom: -7px;
+
+    right: 7%;
+
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+
+    border-radius: 50%;
+
+    transform: rotate(-1deg);
+
+}
+
+.hero-content > p {
+
+    font-size: 20px;
+
+    color: #31566b;
+
+    max-width: 850px;
+
+    margin: 0 auto 38px;
+
+    line-height: 2;
+
+}
+
 .hero-btn {
 
-    display: inline-block;
+    display: inline-flex;
 
-    background: var(--gold);
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    background: linear-gradient(135deg, #ffd36f, #f2ae25);
 
     color: var(--navy);
 
-    padding: 12px 30px;
+    padding: 17px 43px;
 
-    border-radius: 30px;
+    border-radius: 50px;
+
+    font-size: 24px;
 
     font-weight: 900;
 
-    box-shadow: 0 5px 15px rgba(243,189,88,.3);
+    border: 2px solid rgba(255,255,255,.9);
 
-    transition: .3s;
+    box-shadow: 0 13px 28px rgba(219,158,34,.28);
+
+    transition: .35s;
+
+}
+
+.hero-btn::before {
+
+    content: "‹";
+
+    font-family: Arial, sans-serif;
+
+    font-size: 38px;
+
+    line-height: 1;
 
 }
 
 .hero-btn:hover {
 
-    background: white;
+    transform: translateY(-6px);
 
-    transform: translateY(-4px);
+    box-shadow: 0 17px 35px rgba(219,158,34,.4);
+
+    background: linear-gradient(135deg, #ffe29a, #f5b52e);
+
+}
+
+/* Decorative waves */
+
+.hero-waves {
+
+    position: absolute;
+
+    bottom: -2px;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 245px;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+}
+
+.hero-waves svg {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
 
 }
 
@@ -988,7 +1116,7 @@ nav a:hover {
 
     margin: 18px 0;
 
-    font-size: 15px;
+    font-size: 17px;
 
     color: var(--navy);
 
@@ -999,6 +1127,38 @@ nav a:hover {
     color: var(--turquoise);
 
     font-weight: 900;
+
+}
+
+.location-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    color: var(--blue);
+
+    font-weight: 800;
+
+    padding: 5px 12px;
+
+    border-radius: 12px;
+
+    transition: .3s;
+
+}
+
+.location-link:hover {
+
+    color: var(--turquoise);
+
+    background: #e1f7ff;
+
+    transform: translateY(-2px);
 
 }
 
@@ -1028,7 +1188,7 @@ nav a:hover {
 
     padding: 18px 12px;
 
-    border-radius: 22px;
+    border-radius: 25px;
 
     color: white;
 
@@ -1126,7 +1286,7 @@ footer .designer {
 
 }
 
-/* WHATSAPP */
+/* FLOATING WHATSAPP */
 
 .floating-whatsapp {
 
@@ -1230,7 +1390,13 @@ footer .designer {
 
     .hero h2 {
 
-        font-size: 38px;
+        font-size: 52px;
+
+    }
+
+    .hero h2 span {
+
+        font-size: 45px;
 
     }
 
@@ -1328,27 +1494,59 @@ footer .designer {
 
     .hero {
 
-        padding: 65px 0;
+        min-height: 700px;
 
-        min-height: 430px;
+        padding: 75px 0 185px;
 
     }
 
-    .hero-content {
+    .hero-label {
 
-        text-align: center;
+        font-size: 14px;
+
+        padding: 9px 17px;
+
+        margin-bottom: 28px;
 
     }
 
     .hero h2 {
 
-        font-size: 31px;
+        font-size: 43px;
+
+        line-height: 1.45;
+
+    }
+
+    .hero h2 span {
+
+        font-size: 37px;
+
+        margin-bottom: 25px;
 
     }
 
     .hero-content > p {
 
-        font-size: 14px;
+        font-size: 16px;
+
+        line-height: 2;
+
+        margin-bottom: 32px;
+
+    }
+
+    .hero-btn {
+
+        font-size: 20px;
+
+        padding: 14px 30px;
+
+    }
+
+    .hero-waves {
+
+        height: 175px;
 
     }
 
@@ -1458,9 +1656,53 @@ footer .designer {
 
     }
 
+    .hero {
+
+        min-height: 650px;
+
+    }
+
     .hero h2 {
 
-        font-size: 27px;
+        font-size: 36px;
+
+    }
+
+    .hero h2 span {
+
+        font-size: 30px;
+
+    }
+
+    .hero-content > p {
+
+        font-size: 14px;
+
+    }
+
+    .hero-waves {
+
+        height: 145px;
+
+    }
+
+}
+
+/* REDUCE MOTION FOR ACCESSIBILITY */
+
+@media(prefers-reduced-motion: reduce) {
+
+    *,
+
+    *::before,
+
+    *::after {
+
+        scroll-behavior: auto !important;
+
+        animation-duration: .01ms !important;
+
+        transition-duration: .01ms !important;
 
     }
 
@@ -1502,7 +1744,11 @@ footer .designer {
 
                 onclick="toggleMenu()"
 
-                aria-label="فتح القائمة">☰</button>
+                aria-label="فتح القائمة"
+
+                aria-expanded="false"
+
+                id="menuButton">☰</button>
 
         <nav id="mainNav">
 
@@ -1567,6 +1813,38 @@ footer .designer {
             </a>
 
         </div>
+
+    </div>
+
+    <div class="hero-waves" aria-hidden="true">
+
+        <svg viewBox="0 0 1440 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+
+            <path d="M0 100 C260 30 430 270 730 225 C1010 185 1190 30 1440 95 L1440 300 L0 300 Z"
+
+                  fill="#d7f5ff"/>
+
+            <path d="M0 145 C250 70 460 280 760 240 C1040 200 1240 70 1440 115 L1440 300 L0 300 Z"
+
+                  fill="#0aa8b4"/>
+
+            <path d="M0 175 C270 95 470 290 770 255 C1070 220 1230 110 1440 145 L1440 300 L0 300 Z"
+
+                  fill="#087eae"/>
+
+            <path d="M0 190 C260 130 470 300 780 270 C1060 240 1240 155 1440 175"
+
+                  fill="none"
+
+                  stroke="#f3bd58"
+
+                  stroke-width="7"/>
+
+            <path d="M0 215 C270 160 460 310 790 285 C1100 255 1260 185 1440 205 L1440 300 L0 300 Z"
+
+                  fill="#073653"/>
+
+        </svg>
 
     </div>
 
@@ -2020,17 +2298,35 @@ footer .designer {
 
             <div class="contact-item">
 
-                <span>📍 الموقع:</span>
+                <span>📍 موقع المركز:</span>
 
-                ولاية شليم وجزر الحلانيات – محافظة ظفار – سلطنة عمان
+                <a class="location-link"
 
-            </div>
+                   href="https://maps.app.goo.gl/Ppuu6kvoBPgTz7Ro8?g_st=ic"
 
-            <div class="contact-item">
+                   target="_blank"
 
-                <span>📞 الهاتف:</span>
+                   rel="noopener noreferrer">
 
-                +968 2338 8904
+                    <span>عرض موقع المركز على خرائط Google</span>
+
+                    <svg width="22" height="22" viewBox="0 0 24 24"
+
+                         fill="none" stroke="currentColor"
+
+                         stroke-width="2" stroke-linecap="round"
+
+                         stroke-linejoin="round" aria-hidden="true">
+
+                        <path d="M15 3h6v6"/>
+
+                        <path d="M10 14 21 3"/>
+
+                        <path d="M19 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6"/>
+
+                    </svg>
+
+                </a>
 
             </div>
 
@@ -2044,7 +2340,7 @@ footer .designer {
 
                    target="_blank"
 
-                   rel="noopener"
+                   rel="noopener noreferrer"
 
                    aria-label="إنستجرام">
 
@@ -2086,7 +2382,7 @@ footer .designer {
 
                    target="_blank"
 
-                   rel="noopener"
+                   rel="noopener noreferrer"
 
                    aria-label="واتساب">
 
@@ -2180,7 +2476,7 @@ footer .designer {
 
    target="_blank"
 
-   rel="noopener"
+   rel="noopener noreferrer"
 
    aria-label="تواصل عبر واتساب">
 
@@ -2194,7 +2490,19 @@ footer .designer {
 
 function toggleMenu() {
 
-    document.getElementById("mainNav").classList.toggle("active");
+    const nav = document.getElementById("mainNav");
+
+    const button = document.getElementById("menuButton");
+
+    nav.classList.toggle("active");
+
+    button.setAttribute(
+
+        "aria-expanded",
+
+        nav.classList.contains("active") ? "true" : "false"
+
+    );
 
 }
 
@@ -2203,6 +2511,8 @@ document.querySelectorAll("#mainNav a").forEach(function(link) {
     link.addEventListener("click", function() {
 
         document.getElementById("mainNav").classList.remove("active");
+
+        document.getElementById("menuButton").setAttribute("aria-expanded", "false");
 
     });
 
