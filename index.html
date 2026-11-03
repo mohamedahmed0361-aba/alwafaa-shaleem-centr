@@ -1002,33 +1002,69 @@ nav a:hover {
 
 }
 
+/* CONTACT BUTTONS */
+
 .contact-buttons {
 
     display: flex;
 
     justify-content: center;
 
+    align-items: center;
+
     flex-wrap: wrap;
 
-    gap: 15px;
+    gap: 22px;
 
-    margin-top: 25px;
+    margin-top: 30px;
 
 }
 
 .contact-btn {
 
-    padding: 11px 26px;
+    width: 155px;
 
-    border-radius: 30px;
+    min-height: 145px;
+
+    padding: 18px 12px;
+
+    border-radius: 22px;
 
     color: white;
 
     background: var(--blue);
 
-    font-weight: 700;
+    font-weight: 800;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
 
     transition: .3s;
+
+    box-shadow: 0 8px 20px rgba(7,54,83,.12);
+
+}
+
+.contact-btn svg {
+
+    width: 43px;
+
+    height: 43px;
+
+    display: block;
+
+}
+
+.contact-btn span {
+
+    font-size: 17px;
 
 }
 
@@ -1044,11 +1080,17 @@ nav a:hover {
 
 }
 
+.contact-btn.phone {
+
+    background: #087eae;
+
+}
+
 .contact-btn:hover {
 
-    transform: translateY(-4px);
+    transform: translateY(-6px);
 
-    box-shadow: 0 0 18px rgba(8,126,174,.3);
+    box-shadow: 0 0 22px rgba(8,126,174,.3);
 
 }
 
@@ -1349,6 +1391,34 @@ footer .designer {
     .contact-card {
 
         padding: 25px 20px;
+
+    }
+
+    .contact-buttons {
+
+        gap: 12px;
+
+    }
+
+    .contact-btn {
+
+        width: 135px;
+
+        min-height: 130px;
+
+    }
+
+    .contact-btn svg {
+
+        width: 39px;
+
+        height: 39px;
+
+    }
+
+    .contact-btn span {
+
+        font-size: 15px;
 
     }
 
@@ -1966,17 +2036,7 @@ footer .designer {
 
             <div class="contact-buttons">
 
-                <a class="contact-btn whatsapp"
-
-                   href="https://wa.me/96823388904"
-
-                   target="_blank"
-
-                   rel="noopener">
-
-                    واتساب
-
-                </a>
+                <!-- INSTAGRAM -->
 
                 <a class="contact-btn instagram"
 
@@ -1984,17 +2044,103 @@ footer .designer {
 
                    target="_blank"
 
-                   rel="noopener">
+                   rel="noopener"
 
-                    إنستجرام
+                   aria-label="إنستجرام">
+
+                    <svg viewBox="0 0 24 24"
+
+                         fill="none"
+
+                         stroke="currentColor"
+
+                         stroke-width="2"
+
+                         stroke-linecap="round"
+
+                         stroke-linejoin="round"
+
+                         aria-hidden="true">
+
+                        <rect x="3" y="3" width="18" height="18" rx="5"/>
+
+                        <circle cx="12" cy="12" r="4"/>
+
+                        <circle cx="17.5" cy="6.5" r="1"
+
+                                fill="currentColor"
+
+                                stroke="none"/>
+
+                    </svg>
+
+                    <span>إنستجرام</span>
 
                 </a>
 
-                <a class="contact-btn"
+                <!-- WHATSAPP -->
 
-                   href="tel:+9682338904">
+                <a class="contact-btn whatsapp"
 
-                    اتصال مباشر
+                   href="https://wa.me/96823388904"
+
+                   target="_blank"
+
+                   rel="noopener"
+
+                   aria-label="واتساب">
+
+                    <svg viewBox="0 0 24 24"
+
+                         fill="none"
+
+                         stroke="currentColor"
+
+                         stroke-width="1.8"
+
+                         stroke-linecap="round"
+
+                         stroke-linejoin="round"
+
+                         aria-hidden="true">
+
+                        <path d="M20.5 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-4.9a8.5 8.5 0 1 1 16.3-3.6Z"/>
+
+                        <path d="M8.5 8.5c.3-.7.6-.7 1-.7h.5c.2 0 .4.1.5.4l.8 1.8c.1.2.1.4-.1.6l-.6.7c-.2.2-.2.4-.1.6.5.9 1.3 1.7 2.2 2.2.2.1.4.1.6-.1l.8-.9c.2-.2.4-.2.6-.1l1.7.8c.3.1.4.3.4.5 0 .5-.2 1-.6 1.3-.5.4-1.1.6-1.8.5-1.1-.2-2.3-.8-3.5-1.8-1.2-1-2.1-2.3-2.5-3.4-.3-.8-.2-1.6.1-2.4Z"/>
+
+                    </svg>
+
+                    <span>واتساب</span>
+
+                </a>
+
+                <!-- PHONE -->
+
+                <a class="contact-btn phone"
+
+                   href="tel:+96823388904"
+
+                   aria-label="اتصال مباشر">
+
+                    <svg viewBox="0 0 24 24"
+
+                         fill="none"
+
+                         stroke="currentColor"
+
+                         stroke-width="2"
+
+                         stroke-linecap="round"
+
+                         stroke-linejoin="round"
+
+                         aria-hidden="true">
+
+                        <path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 3.1 5.2 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.7l.4 2.7a2 2 0 0 1-.6 1.7L8.1 11a16 16 0 0 0 4.9 4.9l1.9-1.8a2 2 0 0 1 1.7-.6l2.7.4a2 2 0 0 1 1.7 2Z"/>
+
+                    </svg>
+
+                    <span>اتصال مباشر</span>
 
                 </a>
 
